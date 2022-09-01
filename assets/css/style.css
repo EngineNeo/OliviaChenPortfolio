@@ -14,7 +14,7 @@ body, html {
 }
 h1, h2, h3, h4, h5, h6 {
 	padding-bottom: 5px;
-	color: #EDB400;
+	color: #7724c3;
 	line-height: 1em;
 	font-weight: normal;
 	margin: 0 0 10px;
@@ -261,7 +261,7 @@ a:active {color: #416467;}
 }
 .blazer .form-control {
 	background: transparent;
-	border-color: #EDB400;
+	border-color: #7724c3;
 }
 .blazer .form-control:focus {
 	color: #fff;
@@ -272,13 +272,13 @@ a:active {color: #416467;}
 }
 .blazer .btn-sand {
 	color: #FFFFFF;
-	background: #EDB400;
-	border-color: #EDB400;
+	background: #7724c3;
+	border-color: #7724c3;
 	font-weight: bold;
 	border-radius: 0px !important;
 }
 .blazer .btn-sand:hover {
-	background: #DDAA09; 
+	background: #7724c3; 
 }
 .blazer .btn-sand:focus {
 	border-color: #1E86CA;
@@ -341,13 +341,13 @@ nav section {
 	margin-top: 15%;
 }
 .blazer ul.social-icon li a:hover{
-color: #EDB400;
+color: #7724c3;
 }
 .copyRights{
 color:#C8C8C8;
 }
 .copyRights a{
-color: #EDB400;
+color: #7724c3;
 }
 .copyRights a:hover{
 color:#fff;
