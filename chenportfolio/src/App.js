@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactGA from 'react-ga';
 import $ from 'jquery';
 import './App.css';
 import Header from './Components/Header';
@@ -16,23 +15,18 @@ class App extends Component {
     super(props);
     this.state = {
       foo: 'bar',
-      resumeData: {}
+      portfolioData: {}
     };
-
-    ReactGA.initialize('UA-110570651-1');
-    ReactGA.pageview(window.location.pathname);
-
   }
 
-  getResumeData(){
+  getPortfolioData(){
     $.ajax({
-      url:'/resumeData.json',
-      dataType:'json',
+      url:'/portfolioData.json',
       cache: false,
       success: function(data){
-        this.setState({resumeData: data});
+        this.setState({portfolioData: data});
       }.bind(this),
-      error: function(xhr, status, err){
+      error: function(err){
         console.log(err);
         alert(err);
       }
@@ -40,19 +34,19 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.getResumeData();
+    this.getPortfolioData();
   }
 
   render() {
     return (
       <div className="App">
-        <Header data={this.state.resumeData.main}/>
-        <ConceptArt data={this.state.resumeData.main}/>
-        <Illustration data={this.state.resumeData.resume}/>
-        <TraditionalArt data={this.state.resumeData.portfolio}/>
-        <Study data={this.state.resumeData.testimonials}/>
-        <Contact data={this.state.resumeData.main}/>
-        <Footer data={this.state.resumeData.main}/>
+        <Header data={this.state.portfolioData.main}/>
+        <ConceptArt data={this.state.portfolioData.images}/>
+        <Illustration data={this.state.portfolioData.images}/>
+        <TraditionalArt data={this.state.portfolioData.images}/>
+        <Study data={this.state.portfolioData.images}/>
+        <Contact data={this.state.portfolioData.main}/>
+        <Footer data={this.state.portfolioData.main}/>
       </div>
     );
   }

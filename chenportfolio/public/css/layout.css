@@ -219,12 +219,13 @@ ul#nav li.current a { color: #F06000; }
 }
 
 #conceptArt .main-title {
-   margin-left: 1em;
+   padding: 2rem;
    color: white;
    font-size: 500%;
 }
 
 #conceptArt h2 {
+   color: white;
    margin-left: 3rem;
    text-align: center;
 }

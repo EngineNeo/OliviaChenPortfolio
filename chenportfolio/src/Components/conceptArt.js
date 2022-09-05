@@ -1,26 +1,7 @@
 import React, { Component } from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
-
-const Images = 
-[ // Seaside Cafe
-  ["./images/concept_art/character/Project_Seaside_Cafe/Ikeya.jpg",
-  "./images/concept_art/character/Project_Seaside_Cafe/Mina.jpg"
-], [ // Space Opera
-  "./images/concept_art/character/project_space_opera/Dida.jpg",
-  "./images/concept_art/character/project_space_opera/Kun.jpg",
-  "./images/concept_art/character/project_space_opera/Lapu.jpg",
-  "./images/concept_art/character/project_space_opera/Mudan.jpg"
-], [ // Spaceship Raccoon
-  "./images/concept_art/character/project_ship_raccoon/M13_AlexConcept_Chen.jpg",
-  "./images/concept_art/character/project_ship_raccoon/M13_NiniConcept_Chen.jpg"
-], [ // Robot
-  "./images/concept_art/character/robot/AhJing.jpg",
-  "./images/concept_art/character/robot/chowchow.jpg",
-  "./images/concept_art/character/robot/Yuan.jpg"
-]]
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import LightBox, { Modal, ModalGateway } from "react-images";
 
 const responsive = {
   desktop: {
@@ -58,52 +39,68 @@ const carouselStyle = {
 }
 
 class ConceptArt extends Component {
-  constructor(props) {
-    super(props);
+  _isMounted = false;
 
-    this.state = {
-      subImageIndex: 0,
-      imageIndex: 0,
-      isOpen: false
-    };
+  state = {
+    characterImages: [],
+    loading: false,
+    lightboxIsOpen: false,
+    // selectedIndex: 0,
+    selectedImage: {}
+  };
+
+  componentDidMount() {
+    if(this.props.data){
+      var caimages= this.props.data.conceptart;
+      }
+    this._isMounted = true;
+    console.log("app mounted");
+    console.log(caimages)
+    this.setState({ loading: true });
+    fetch(caimages)
+      .then(data => data.json())
+      .then(data =>
+        this.setState(
+          {
+            characterImages: data.map(item => ({
+              ...item,
+              source: item.src
+            })),
+            loading: false
+          },
+          () => console.log(data)
+        )
+      );
   }
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  toggleLightbox = (post, selectedIndex) => {
+    // this.setState(state => ({
+    //   lightboxIsOpen: !state.lightboxIsOpen,
+    //   selectedIndex
+    // }));
+    this.setState(state => ({
+      lightboxIsOpen: !state.lightboxIsOpen,
+      selectedImage: { title: post.title, index: selectedIndex }
+    }));
+  };
+
   render() {
-    const { subImageIndex,
-            imageIndex,
-            isOpen } = this.state;
 
     return (
         <section id="conceptArt">
-            <h1 class="main-title">Concept Art</h1>
+            <h1 className="main-title">Concept Art</h1>
+            <h2>Characters</h2>
             <hr/>
-            <h2>Project Seaside Cafe</h2>
-            <div className="row">
-              <div className="column">
-                <img
-                  onClick={() => this.setState({isOpen: true, 
-                                                  imageIndex: 0, 
-                                                  subImageIndex: 0})}
-                  onmouseover={() => this.setState}
-                  src={Images[0][0]}
-                  alt="Seaside Cafe - Ikeya"
-                />
-              </div>
-              <div className="column">
-                <img
-                  onClick={() => this.setState({isOpen: true, 
-                                                imageIndex: 0, 
-                                                subImageIndex: 1})}
-                  onmouseover={() => this.setState}
-                  src={Images[0][1]}
-                  alt="Seaside Cafe - Mina"
-                />
-              </div>
-            </div>
+            <h2>Props</h2>
             <hr/>
-            <h2>Project Space Opera</h2>
+            <>
               <Carousel
                 additionalTransfrom={0}
                 autoPlaySpeed={3000}
+                autoPlay
                 centerMode={false}
                 draggable={false}
                 containerClass="container-with-dots"
@@ -121,107 +118,45 @@ class ConceptArt extends Component {
                 showDots={false}
                 slidesToSlide={1}
               >
-              <img
-                onClick={() => this.setState({isOpen: true, 
-                                              imageIndex: 1, 
-                                              subImageIndex: 0})}
-                onmouseover={() => this.setState}
-                src={Images[1][0]}
-                alt="Space Opera - Dida"
-                style={carouselStyle}
-              />
-              <img
-                onClick={() => this.setState({isOpen: true, 
-                                              imageIndex: 1, 
-                                              subImageIndex: 1})}
-                onmouseover={() => this.setState}
-                src={Images[1][1]}
-                alt="Space Opera - Kun"
-                style={carouselStyle}
-              />
-              <img
-                onClick={() => this.setState({isOpen: true, 
-                                              imageIndex: 1, 
-                                              subImageIndex: 2})}
-                onmouseover={() => this.setState}
-                src={Images[1][2]}
-                alt="Space Opera - Lapu"
-                style={carouselStyle}
-              />
-              <img
-                onClick={() => this.setState({isOpen: true, 
-                                              imageIndex: 1, 
-                                              subImageIndex: 3})}
-                onmouseover={() => this.setState}
-                src={Images[1][3]}
-                alt="Space Opera - Mudan"
-                style={carouselStyle}
-              />
-            </Carousel>
-          <hr/>
-          <h2>Project Spaceship Raccoon</h2>
-            <div className="row">
-              <div className="column">
-                <img
-                  onClick={() => this.setState({isOpen: true, 
-                                                  imageIndex: 2, 
-                                                  subImageIndex: 0})}
-                  onmouseover={() => this.setState}
-                  src={Images[2][0]}
-                  alt="Spaceship Raccoon - Alex"
-                />
-              </div>
-              <div className="column">
-                <img
-                  onClick={() => this.setState({isOpen: true, 
-                                                imageIndex: 2, 
-                                                subImageIndex: 1})}
-                  onmouseover={() => this.setState}
-                  src={Images[2][1]}
-                  alt="Spaceship Raccoon - Nini"
-                />
-              </div>
-            </div>
-          <hr/>
-          <h2>Project Gems of China</h2>
-            <div className="row">
-              <div className="column">
-                <img
-                  onClick={() => this.setState({isOpen: true, 
-                                                  imageIndex: 3, 
-                                                  subImageIndex: 0})}
-                  onmouseover={() => this.setState}
-                  src={Images[3][0]}
-                  alt="Robot - Ah Jing"
-                />
-              </div>
-              <div className="column">
-                <img
-                  onClick={() => this.setState({isOpen: true, 
-                                                imageIndex: 3, 
-                                                subImageIndex: 1})}
-                  onmouseover={() => this.setState}
-                  src={Images[3][1]}
-                  alt="Robot - Chow Chow"
-                />
-              </div>
-              <div className="column">
-                <img
-                  onClick={() => this.setState({isOpen: true, 
-                                                imageIndex: 3, 
-                                                subImageIndex: 2})}
-                  onmouseover={() => this.setState}
-                  src={Images[3][2]}
-                  alt="Robot - Chow Chow"
-                />
-              </div>
-            </div>
-          {isOpen && (
-            <Lightbox
-              mainSrc={Images[imageIndex][subImageIndex]}
-              onCloseRequest={() => this.setState({ isOpen: false })}
-            />
-          )}
+                {Object.values(this.state.characterImages).map((post, indx) => {
+                  return (
+                    <div
+                      className="mt-5"
+                      key={indx}
+                      // onClick={() => this.toggleLightbox(indx)}
+                      onClick={() => this.toggleLightbox(post, indx)}
+                    >
+                      <img
+                        src='./images/concept_art/character/Project_Seaside_Cafe/Ikeya.jpg'
+                        alt="Alt text"
+                        style={carouselStyle}
+                      />
+                    </div>
+                  );
+                })}
+              </Carousel>
+              <ModalGateway>
+                {this.state.lightboxIsOpen ? (
+                  <Modal onClose={this.toggleLightbox}>
+                    <LightBox
+                      components={{
+                        FooterCaption: props => {
+                          return (
+                            // <div>shot by - {this.state.selectedImage.author}</div>
+                            <div>{props.currentView.title}</div> // this displays correct dynamic author
+                          );
+                        }
+                      }}
+                      // currentIndex={this.state.selectedIndex}
+                      currentIndex={this.state.selectedImage.index}
+                      // formatters={{ getAltText }}
+                      frameProps={{ autoSize: "height" }}
+                      views={this.state.characterImages}
+                    />
+                  </Modal>
+                ) : null}
+              </ModalGateway>
+            </>
         </section>
     );
   }
