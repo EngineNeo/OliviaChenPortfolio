@@ -46,8 +46,10 @@ class ConceptArt extends Component {
     imageCharacters: [],
     imageProps: [],
     loading: false,
-    lightboxIsOpen: false,
-    selectedImage: {}
+    characterLBIsOpen: false,
+    propLBIsOpen: false,
+    selectedCharacter: {},
+    selectedProp: {}
   };
 
   componentDidMount() {
@@ -77,10 +79,17 @@ class ConceptArt extends Component {
     this._isMounted = false;
   }
 
-  toggleLightbox = (post, selectedIndex) => {
+  toggleCharacterLightbox = (post, selectedIndex) => {
     this.setState(state => ({
-      lightboxIsOpen: !state.lightboxIsOpen,
-      selectedImage: { title: post.title, index: selectedIndex }
+      characterLBIsOpen: !state.characterLBIsOpen,
+      selectedCharacter: { title: post.title, index: selectedIndex },
+    }));
+  };
+
+  togglePropLightbox = (post, selectedIndex) => {
+    this.setState(state => ({
+      propLBIsOpen: !state.propLBIsOpen,
+      selectedProp: { title: post.title, index: selectedIndex }
     }));
   };
 
@@ -105,7 +114,6 @@ class ConceptArt extends Component {
                 draggable={false}
                 focusOnSelect={false}
                 infinite
-                keyBoardControl
                 minimumTouchDrag={80}
                 renderButtonGroupOutside={false}
                 renderDotsOutside={true}
@@ -115,7 +123,7 @@ class ConceptArt extends Component {
                   return (
                     <div
                       key={indx}
-                      onClick={() => this.toggleLightbox(post, indx)}
+                      onClick={() => this.toggleCharacterLightbox(post, indx)}
                     >
                       <img
                         src={post.imageThumbnail}
@@ -127,7 +135,7 @@ class ConceptArt extends Component {
                 })}
               </Carousel>
               <ModalGateway>
-                {this.state.lightboxIsOpen ? (
+                {this.state.characterLBIsOpen ? (
                   <Modal onClose={this.toggleLightbox}>
                     <LightBox
                       components={{
@@ -137,7 +145,7 @@ class ConceptArt extends Component {
                           );
                         }
                       }}
-                      currentIndex={this.state.selectedImage.index}
+                      currentIndex={this.state.selectedCharacter.index}
                       frameProps={{ autoSize: "height" }}
                       views={this.state.imageCharacters}
                     />
@@ -162,7 +170,6 @@ class ConceptArt extends Component {
                 draggable={false}
                 focusOnSelect={false}
                 infinite
-                keyBoardControl
                 minimumTouchDrag={80}
                 renderButtonGroupOutside={false}
                 renderDotsOutside={true}
@@ -172,7 +179,7 @@ class ConceptArt extends Component {
                   return (
                     <div
                       key={indx}
-                      onClick={() => this.toggleLightbox(post, indx)}
+                      onClick={() => this.togglePropLightbox(post, indx)}
                     >
                       <img
                         src={post.imageThumbnail}
@@ -184,8 +191,8 @@ class ConceptArt extends Component {
                 })}
               </Carousel>
               <ModalGateway>
-                {this.state.lightboxIsOpen ? (
-                  <Modal onClose={this.toggleLightbox}>
+                {this.state.propLBIsOpen ? (
+                  <Modal onClose={this.togglePropLightbox}>
                     <LightBox
                       components={{
                         FooterCaption: props => {
@@ -194,7 +201,7 @@ class ConceptArt extends Component {
                           );
                         }
                       }}
-                      currentIndex={this.state.selectedImage.index}
+                      currentIndex={this.state.selectedProp.index}
                       frameProps={{ autoSize: "height" }}
                       views={this.state.imageProps}
                     />
