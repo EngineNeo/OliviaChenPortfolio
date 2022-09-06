@@ -22,11 +22,12 @@ class App extends Component {
   getPortfolioData(){
     $.ajax({
       url:'/portfolioData.json',
+      dataType: 'json',
       cache: false,
       success: function(data){
         this.setState({portfolioData: data});
       }.bind(this),
-      error: function(err){
+      error: function(xhr, status, err){
         console.log(err);
         alert(err);
       }

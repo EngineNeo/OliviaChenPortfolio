@@ -28,43 +28,40 @@ const responsive = {
     items: 2,
     partialVisibilityGutter: 30
   }
-}
+};
 
 const carouselStyle = {
-  display: 'block',
-  height: '100%',
-  paddingLeft: '1em',
-  paddingRight: '1em',
-  width: '100%',
+  objectFit: "cover",
+  width: "35em",
+  height: "35em",
+  boxShadow: "1px 0px 1px 2px black"
 }
 
 class ConceptArt extends Component {
   _isMounted = false;
 
   state = {
-    characterImages: [],
+    imageData: [],
     loading: false,
     lightboxIsOpen: false,
-    // selectedIndex: 0,
     selectedImage: {}
   };
 
   componentDidMount() {
-    if(this.props.data){
-      var caimages= this.props.data.conceptart;
-      }
     this._isMounted = true;
     console.log("app mounted");
-    console.log(caimages)
     this.setState({ loading: true });
-    fetch(caimages)
+    // fetch("https://onelbip0e6.execute-api.eu-west-2.amazonaws.com/xxxxx")
+    fetch("portfolioData.json")
       .then(data => data.json())
       .then(data =>
+        // this.setState({ imageData: data[0], loading: false }, () =>
         this.setState(
           {
-            characterImages: data.map(item => ({
+            // imageData: data.map(item => ({source: item.download_url })),
+            imageData: data.images.conceptart.map(item => ({
               ...item,
-              source: item.src
+              source: item.imageSource
             })),
             loading: false
           },
@@ -91,34 +88,34 @@ class ConceptArt extends Component {
 
     return (
         <section id="conceptArt">
-            <h1 className="main-title">Concept Art</h1>
-            <h2>Characters</h2>
-            <hr/>
-            <h2>Props</h2>
-            <hr/>
+          <h1 className="main-title">Concept Art</h1>
+          <h2>Characters</h2>
+          <hr/>
+          {this.state.loading ? (
+            <div className="text-center">Loading...</div>
+          ) : (
             <>
               <Carousel
                 additionalTransfrom={0}
+                showDots={false}
+                arrows={true}
                 autoPlaySpeed={3000}
-                autoPlay
+                autoPlay={true}
                 centerMode={false}
-                draggable={false}
+                className="slider"
                 containerClass="container-with-dots"
+                dotListClass="dots"
+                draggable
                 focusOnSelect={false}
                 infinite
+                itemClass="carousel-top"
+                keyBoardControl
                 minimumTouchDrag={80}
-                renderArrowsWhenDisabled={false}
                 renderButtonGroupOutside={false}
-                renderDotsOutside={false}
+                renderDotsOutside
                 responsive={responsive}
-                rewind={false}
-                rewindWithAnimation={false}
-                rtl={false}
-                shouldResetAutoplay
-                showDots={false}
-                slidesToSlide={1}
               >
-                {Object.values(this.state.characterImages).map((post, indx) => {
+                {Object.values(this.state.imageData).map((post, indx) => {
                   return (
                     <div
                       className="mt-5"
@@ -127,7 +124,8 @@ class ConceptArt extends Component {
                       onClick={() => this.toggleLightbox(post, indx)}
                     >
                       <img
-                        src='./images/concept_art/character/Project_Seaside_Cafe/Ikeya.jpg'
+                        className="media-img card-img-top card-img-hero"
+                        src={post.imageSource}
                         alt="Alt text"
                         style={carouselStyle}
                       />
@@ -151,12 +149,15 @@ class ConceptArt extends Component {
                       currentIndex={this.state.selectedImage.index}
                       // formatters={{ getAltText }}
                       frameProps={{ autoSize: "height" }}
-                      views={this.state.characterImages}
+                      views={this.state.imageData}
                     />
                   </Modal>
                 ) : null}
               </ModalGateway>
             </>
+          )}
+          <h2>Props</h2>
+          <hr/>
         </section>
     );
   }
