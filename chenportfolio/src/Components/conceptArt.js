@@ -136,7 +136,7 @@ class ConceptArt extends Component {
               </Carousel>
               <ModalGateway>
                 {this.state.characterLBIsOpen ? (
-                  <Modal onClose={this.toggleLightbox}>
+                  <Modal onClose={this.toggleCharacterLightbox}>
                     <LightBox
                       components={{
                         FooterCaption: props => {
@@ -170,7 +170,7 @@ class ConceptArt extends Component {
                 draggable={false}
                 focusOnSelect={false}
                 infinite
-                minimumTouchDrag={80}
+                minimumTouchDrag={80}d
                 renderButtonGroupOutside={false}
                 renderDotsOutside={true}
                 responsive={responsive}
