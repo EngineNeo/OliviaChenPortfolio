@@ -1,60 +1,36 @@
 import React, { Component } from 'react';
-import Gallery from 'react-grid-gallery';
+// import Gallery from 'react-grid-gallery';
 import LightBox, { Modal, ModalGateway } from "react-images";
+import Masonry from 'react-masonry-css'
 // import PropTypes from 'prop-types';
 
-const IMAGES = 
+var IMAGES = 
   [
-    {
-      src: "images/digital illustration/environment/An Opening.jpg",
-      thumbnail: "images/digital illustration/IllustrationThumbnail/anopeningThumbnail.jpg",
-      thumbnailWidth: "1728",
-      thumbnailHeight: "837"
-    },
-    {
-      src: "images/digital illustration/color study.jpg",
-      thumbnail: "images/digital illustration/IllustrationThumbnail/colorstudyThumbnail.jpg",
-      thumbnailWidth: "1063",
-      thumbnailHeight: "1530"
-    },
-    {
-      src: "images/digital illustration/environment/On the way.jpg",
-      thumbnail: "images/digital illustration/IllustrationThumbnail/OnTheWayThumbnail.jpg",
-      thumbnailWidth: "1632",
-      thumbnailHeight: "1056"
-    }
-  ]
+      {id: 1, image: "images/digital illustration/IllustrationThumbnail/anopeningThumbnail.jpg"},
+      {id: 2, image: "images/digital illustration/IllustrationThumbnail/colorstudyThumbnail.jpg"},
+      {id: 3, image: "images/digital illustration/IllustrationThumbnail/OnTheWayThumbnail.jpg"},
+      {id: 4, image: "images/digital illustration/IllustrationThumbnail/StilllifeThumbnail.jpg"},
+  ];
+
+  IMAGES = IMAGES.map(function(item) {
+    return <img key={item.id} src={item.image} alt="Digital Illustration"/>
+  });
 
 class Illustration extends Component {
   _isMounted = false;
 
   state = {
-    illImages: [],
     loading: false,
     lightboxIsOpen: false,
     selectedImage: {}
   };
 
-  componentDidMount() {
-    fetch("portfolioData.json")
-        .then(data => data.json())
-        .then(data => {
-          this.setState({
-              illImages: data.images.illustrations,
-            })
-        })
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
-
-  // togglePropLightbox = (post, selectedIndex) => {
-  //   this.setState(state => ({
-  //     lightboxIsOpen: !state.lightboxIsOpen,
-  //     selectedImage: { title: post.title, index: selectedIndex }
-  //   }));
-  // };
+  toggleLightbox = (post, selectedIndex) => {
+    this.setState(state => ({
+      lightboxIsOpen: !state.lightboxIsOpen,
+      selectedImage: { title: post.title, index: selectedIndex }
+    }));
+  };
 
   render() {
     return (
@@ -65,16 +41,15 @@ class Illustration extends Component {
             <div className="text-center">Loading...</div>
           ) : (
             <>
-              <Gallery
-              images={IMAGES}
-              enableLightbox={false}
-              enableImageSelection={false}
-              rowHeight={300}
-              />
-  
-              {/* <ModalGateway>
-                {this.state.characterLBIsOpen ? (
-                  <Modal onClose={this.toggleCharacterLightbox}>
+                <Masonry
+                breakpointCols={1}
+                className="my-masonry-grid"
+                columnClassName="my-masonry-grid_column">
+                {IMAGES}
+                </Masonry>
+              <ModalGateway>
+                {this.state.lightboxisOpen ? (
+                  <Modal onClose={this.toggleLightbox}>
                     <LightBox
                       components={{
                         FooterCaption: props => {
@@ -83,13 +58,13 @@ class Illustration extends Component {
                           );
                         }
                       }}
-                      currentIndex={this.state.selectedCharacter.index}
+                      currentIndex={this.state.selectedImage.index}
                       frameProps={{ autoSize: "height" }}
-                      views={this.state.imageCharacters}
+                      views={this.state.illImages}
                     />
                   </Modal>
                 ) : null}
-              </ModalGateway> */}
+              </ModalGateway>
             </>
           )}
       </section>
