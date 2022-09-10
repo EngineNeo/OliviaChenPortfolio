@@ -100,15 +100,19 @@
    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
+   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("nav-wrap").style.top = "0";
-  } else {
-    document.getElementById("nav-wrap").style.top = "-6rem";
-  }
+      document.getElementById("nav-wrap").style.top = "0";
+  } 
+  else {
+      if (currentScrollPos == prevScrollpos) {    
+      }
+      else {
+         document.getElementById("nav-wrap").style.top = "-8rem";
+         }
+      }
   prevScrollpos = currentScrollPos;
 }
-
 
 /*----------------------------------------------------*/
 /*	Modal Popup

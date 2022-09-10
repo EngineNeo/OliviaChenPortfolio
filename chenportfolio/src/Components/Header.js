@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const logo = "images/logo/logo_red.png"
+const logo = "images/logo/logo_white.png"
 
 class Header extends Component {
   render() {
@@ -23,9 +23,18 @@ class Header extends Component {
 
          <ul id="nav" className="nav">
             <li className="navbar-logo" href=""><a className="smoothscroll" href="#home">
-               <img src={logo} alt="Home" style={{
-                  height: "5rem", 
-                  width: "5rem",}}></img></a>
+               <img 
+               className="logo-img1" 
+               src={logo} 
+               alt="Home" 
+               style={{
+                  height: "4.75rem", 
+                  width: "4.75rem",
+                  verticalAlign: "middle",
+                  }}
+               ></img>
+               </a>
+
             </li>
             <li><a className="smoothscroll" href="#conceptArt">Concept Art</a></li>
 	         <li><a className="smoothscroll" href="#illustration">Illustration</a></li>

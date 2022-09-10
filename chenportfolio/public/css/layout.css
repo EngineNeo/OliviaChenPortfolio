@@ -78,7 +78,7 @@ img:hover {
  }
 
 .main-title {
-   padding: 8rem 2rem 1rem;
+   padding: 5rem 2rem 1rem;
    color: white;
    font-size: 8rem;
    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
@@ -201,6 +201,7 @@ header .scrolldown a:hover { color: #11ABB0; }
    left: 0;
    top: 0;
    transition: top 0.5s;
+   background-color: #333; 
 }
 .opaque { background-color: #333; }
 
@@ -210,9 +211,9 @@ header .scrolldown a:hover { color: #11ABB0; }
 ul#nav {
    min-height: 48px;
    width: auto;
-
    /* center align the menu */
    text-align: center;
+   padding: 1rem;
 }
 ul#nav li {
    position: relative;
@@ -226,15 +227,13 @@ ul#nav li a {
 
 /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
 
-   display: inline-block;
-   margin: auto;
-   padding: 8px 13px;
+   padding: 10px 13px;
    line-height: 32px;
 	text-decoration: none;
    text-align: left;
    color: #fff;
    text-shadow: 0px 1px 2px rgba(0, 0, 0, .75);
-
+   font-size: 1.5rem;
 	-webkit-transition: color .2s ease-in-out;
 	-moz-transition: color .2s ease-in-out;
 	-o-transition: color .2s ease-in-out;
@@ -244,7 +243,6 @@ ul#nav li a {
 
 ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
-
 
 /* ------------------------------------------------------------------ */
 /* c. Concept Art Section
