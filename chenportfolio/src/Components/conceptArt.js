@@ -130,6 +130,7 @@ class ConceptArt extends Component {
                         alt="Alt text"
                         style={carouselStyle}
                       />
+                      <h4>{post.title}</h4>
                     </div>
                   );
                 })}
@@ -186,6 +187,7 @@ class ConceptArt extends Component {
                         alt="Alt text"
                         style={carouselStyle}
                       />
+                      <h4>{post.title}</h4>
                     </div>
                   );
                 })}

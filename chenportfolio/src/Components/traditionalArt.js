@@ -5,16 +5,8 @@ class TraditionalArt extends Component {
 
     return (
       <section id="traditionalArt">
-
-      <div className="row">
-
-         <div className="twelve columns collapsed">
-
-            <div id="portfolio-wrapper" className="bgrid-quarters s-bgrid-thirds cf">
-            </div>
-          </div>
-      </div>
-   </section>
+        <h1 className="main-title">Traditonal Art</h1>
+      </section>
     );
   }
 }
