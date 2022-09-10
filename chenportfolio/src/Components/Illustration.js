@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 // import Gallery from 'react-grid-gallery';
 import LightBox, { Modal, ModalGateway } from "react-images";
-// import Masonry from 'react-masonry-css'
 import { Container, Row, Col } from 'react-grid-system';
-// import PropTypes from 'prop-types';
 
 // var IMAGES = 
 //   [

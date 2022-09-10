@@ -77,25 +77,37 @@
 /*	Fade In/Out Primary Navigation
 ------------------------------------------------------*/
 
-   $(window).on('scroll', function() {
+   // $(window).on('scroll', function() {
 
-		var h = $('header').height();
-		var y = $(window).scrollTop();
-      var nav = $('#nav-wrap');
+	// 	var h = $('header').height();
+	// 	var y = $(window).scrollTop();
+   //    var nav = $('#nav-wrap');
 
-	   if ( (y > h*.20) && (y < h) && ($(window).outerWidth() > 768 ) ) {
-	      nav.fadeOut('fast');
-	   }
-      else {
-         if (y < h*.20) {
-            nav.removeClass('opaque').fadeIn('fast');
-         }
-         else {
-            nav.addClass('opaque').fadeIn('fast');
-         }
-      }
+	//    if ( (y > h*.20) && (y < h) && ($(window).outerWidth() > 768 ) ) {
+	//       nav.fadeOut('fast');
+	//    }
+   //    else {
+   //       if (y < h*.20) {
+   //          nav.removeClass('opaque').fadeIn('fast');
+   //       }
+   //       else {
+   //          nav.addClass('opaque').fadeIn('fast');
+   //       }
+   //    }
 
-	});
+	// });
+
+   /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("nav-wrap").style.top = "0";
+  } else {
+    document.getElementById("nav-wrap").style.top = "-6rem";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
 
 /*----------------------------------------------------*/

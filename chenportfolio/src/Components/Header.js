@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const logo = "images/logo/logo_red.png"
+
 class Header extends Component {
   render() {
 
@@ -20,7 +22,11 @@ class Header extends Component {
 	      <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
 
          <ul id="nav" className="nav">
-            <li className="navbar-logo" href=""><a className="smoothscroll" href="#home">Home</a></li>
+            <li className="navbar-logo" href=""><a className="smoothscroll" href="#home">
+               <img src={logo} alt="Home" style={{
+                  height: "5rem", 
+                  width: "5rem",}}></img></a>
+            </li>
             <li><a className="smoothscroll" href="#conceptArt">Concept Art</a></li>
 	         <li><a className="smoothscroll" href="#illustration">Illustration</a></li>
             <li><a className="smoothscroll" href="#traditionalArt">Tradtional Art</a></li>
