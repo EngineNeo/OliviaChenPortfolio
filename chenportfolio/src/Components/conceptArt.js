@@ -1,103 +1,91 @@
 import React, { Component } from 'react';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import LightBox, { Modal, ModalGateway } from "react-images";
+// import Carousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
+// import LightBox, { Modal, ModalGateway } from "react-images";
 
-const responsive = {
-  desktop: {
-    breakpoint: {
-      max: 3000,
-      min: 1024
-    },
-    items: 3,
-    partialVisibilityGutter: 40
-  },
-  mobile: {
-    breakpoint: {
-      max: 464,
-      min: 0
-    },
-    items: 1,
-    partialVisibilityGutter: 30
-  },
-  tablet: {
-    breakpoint: {
-      max: 1024,
-      min: 464
-    },
-    items: 2,
-    partialVisibilityGutter: 30
-  }
-};
 
-const carouselStyle = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "90%",
-  // border: "1rem solid #ffffff",
-  boxShadow: "0px 5px 6px rgba(0, 0, 0, .5)"
-}
+// const carouselStyle = {
+//   display: "flex",
+//   justifyContent: "center",
+//   alignItems: "center",
+//   width: "90%",
+//   // border: "1rem solid #ffffff",
+//   boxShadow: "0px 5px 6px rgba(0, 0, 0, .5)"
+// }
+
+const IMAGES = [
+  "images/ConceptArt/character/CharacterThumbnails/AhJingThumbnail.jpg",
+  "images/ConceptArt/character/CharacterThumbnails/AlexConceptThumbnail.jpg",
+  "images/ConceptArt/character/CharacterThumbnails/LapuThumbnail.jpg"
+]
 
 class ConceptArt extends Component {
   _isMounted = false;
 
-  state = {
-    imageCharacters: [],
-    imageProps: [],
-    loading: false,
-    characterLBIsOpen: false,
-    propLBIsOpen: false,
-    selectedCharacter: {},
-    selectedProp: {}
-  };
+  // state = {
+  //   imageCharacters: [],
+  //   imageProps: [],
+  //   loading: false,
+  //   characterLBIsOpen: false,
+  //   propLBIsOpen: false,
+  //   selectedCharacter: {},
+  //   selectedProp: {}
+  // };
 
-  componentDidMount() {
-    this._isMounted = true;
-    console.log("app mounted");
-    this.setState({ loading: true });
-    fetch("portfolioData.json")
-      .then(data => data.json())
-      .then(data =>
-        this.setState(
-          {
-            imageCharacters: data.images.conceptart.characters.map(item => ({
-              ...item,
-              source: item.imageThumbnail
-            })),
-            imageProps: data.images.conceptart.props.map(item => ({
-              ...item,
-              source: item.imageThumbnail
-            })),
-            loading: false
-          },
-          () => console.log(data)
-        )
-      );
-  }
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
+  // componentDidMount() {
+  //   this._isMounted = true;
+  //   console.log("app mounted");
+  //   this.setState({ loading: true });
+  //   fetch("portfolioData.json")
+  //     .then(data => data.json())
+  //     .then(data =>
+  //       this.setState(
+  //         {
+  //           imageCharacters: data.images.conceptart.characters.map(item => ({
+  //             ...item,
+  //             source: item.imageThumbnail
+  //           })),
+  //           imageProps: data.images.conceptart.props.map(item => ({
+  //             ...item,
+  //             source: item.imageThumbnail
+  //           })),
+  //           loading: false
+  //         })
+  //     );
+  // }
+  // componentWillUnmount() {
+  //   this._isMounted = false;
+  // }
 
-  toggleCharacterLightbox = (post, selectedIndex) => {
-    this.setState(state => ({
-      characterLBIsOpen: !state.characterLBIsOpen,
-      selectedCharacter: { title: post.title, index: selectedIndex },
-    }));
-  };
+  // toggleCharacterLightbox = (post, selectedIndex) => {
+  //   this.setState(state => ({
+  //     characterLBIsOpen: !state.characterLBIsOpen,
+  //     selectedCharacter: { title: post.title, index: selectedIndex },
+  //   }));
+  // };
 
-  togglePropLightbox = (post, selectedIndex) => {
-    this.setState(state => ({
-      propLBIsOpen: !state.propLBIsOpen,
-      selectedProp: { title: post.title, index: selectedIndex }
-    }));
-  };
+  // togglePropLightbox = (post, selectedIndex) => {
+  //   this.setState(state => ({
+  //     propLBIsOpen: !state.propLBIsOpen,
+  //     selectedProp: { title: post.title, index: selectedIndex }
+  //   }));
+  // };
 
   render() {
 
     return (
         <section id="conceptArt">
           <h1 className="main-title">Concept Art</h1>
+          <hr/>
+          <div id="nanogallery2" data-nanogallery2='{
+            "thumbnailHeight":  "auto",
+            "thumbnailWidth":   "auto",
+            "kind": "nano_photos_provider2",
+            "dataProvider": "nano_photos_provider2/nano_photos_provider2.php",
+            "contentFolder": "nano_photos_content/ConceptArt/character/ProjectSpaceOpera"'>
+          </div>
+
+          {/* <h1 className="main-title">Concept Art</h1>
           <h2>Characters</h2>
           <hr/>
           {this.state.loading ? ( // Beginning of Characters
@@ -126,6 +114,7 @@ class ConceptArt extends Component {
                       onClick={() => this.toggleCharacterLightbox(post, indx)}
                     >
                       <img
+                        className="Lightbox"
                         src={post.imageThumbnail}
                         alt="Alt text"
                         style={carouselStyle}
@@ -211,7 +200,7 @@ class ConceptArt extends Component {
                 ) : null}
               </ModalGateway>
             </>
-          )}
+          )} */}
         </section>
     );
   }

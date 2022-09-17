@@ -1,8 +1,32 @@
 import React, { Component } from 'react';
+import {animateScroll as scroll, scroller } from 'react-scroll'
 
 const logo = "images/logo/logo_white.png"
 
 class Header extends Component {
+
+   constructor(props) {
+      super(props);
+      this.scrollToTop = this.scrollToTop.bind(this);
+    }
+
+   scrollToTop() {
+      scroll.scrollToTop({
+         duration: 1000,
+         delay: 0,
+         smooth: 'easeInOutQuart'
+      });
+    }
+
+   scrollTo(pageRef) {
+    scroller.scrollTo(pageRef, {
+      duration: 1000,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+    })
+  }
+
+
   render() {
 
     if(this.props.data){
@@ -22,7 +46,7 @@ class Header extends Component {
 	      <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
 
          <ul id="nav" className="nav">
-            <li className="navbar-logo" href=""><a className="smoothscroll" href="#home">
+            <li className="navbar-logo" href=""><a onClick={() => scroll.scrollToTop()}>
                <img 
                className="logo-img1" 
                src={logo} 
@@ -34,13 +58,12 @@ class Header extends Component {
                   }}
                ></img>
                </a>
-
             </li>
-            <li><a className="smoothscroll" href="#conceptArt">Concept Art</a></li>
-	         <li><a className="smoothscroll" href="#illustration">Illustration</a></li>
-            <li><a className="smoothscroll" href="#traditionalArt">Tradtional Art</a></li>
-            <li><a className="smoothscroll" href="#study">Study</a></li>
-            <li><a className="smoothscroll" href="#contact">Contact Me</a></li>
+            <li><a href="#conceptArt" onClick={() => this.scrollTo("conceptArt")}>Concept Art</a></li>
+	         <li><a href="#illustration" onClick={() => this.scrollTo("illustration")}>Illustration</a></li>
+            <li><a href="#traditionalArt" onClick={() => this.scrollTo("traditionalArt")}>Traditional Art</a></li>
+            <li><a href="#study" onClick={() => this.scrollTo("study")}>Study</a></li>
+            <li><a href="#contact" onClick={() => this.scrollTo("contact")}>Contact Me</a></li>
          </ul>
 
       </nav>

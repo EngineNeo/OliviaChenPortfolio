@@ -6,6 +6,31 @@
 
  jQuery(document).ready(function($) {
 
+
+/*----------------------------------------------------*/
+/* Nanogallery2
+------------------------------------------------------ */
+
+   // jQuery("#nanogallery2_flickr").nanogallery2(settings);
+  
+   // jQuery('#btn_photostream').on('click', function() {
+   //   jQuery("#nanogallery2_flickr").nanogallery2('destroy');
+   //   settings.album = 'none';
+   //   jQuery("#nanogallery2_flickr").nanogallery2(settings);
+   // });
+   
+   // jQuery('#btn_albums').on('click', function() {
+   //   jQuery("#nanogallery2_flickr").nanogallery2('destroy');
+   //   settings.album = undefined;
+   //   jQuery("#nanogallery2_flickr").nanogallery2(settings);
+   // });
+   
+   // jQuery('#btn_album').on('click', function() {
+   //   jQuery("#nanogallery2_flickr").nanogallery2('destroy');
+   //   settings.album = '72157675219521270';     // Flickr album ID
+   //   jQuery("#nanogallery2_flickr").nanogallery2(settings);
+   // });
+
 /*----------------------------------------------------*/
 /* FitText Settings
 ------------------------------------------------------ */
@@ -19,25 +44,25 @@
 /* Smooth Scrolling
 ------------------------------------------------------ */
 
-   $('.smoothscroll').on('click',function (e) {
-	    e.preventDefault();
+   // $('.smoothscroll').on('click',function (e) {
+	//     e.preventDefault();
 
-	    var target = this.hash,
-	    $target = $(target);
+	//     var target = this.hash,
+	//     $target = $(target);
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 800, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
+	//     $('html, body').stop().animate({
+	//         'scrollTop': $target.offset().top
+	//     }, 800, 'swing', function () {
+	//         window.location.hash = target;
+	//     });
+	// });
 
 
 /*----------------------------------------------------*/
 /* Highlight the current section in the navigation bar
 ------------------------------------------------------*/
 
-	var sections = $("section");
+   var sections = $("section");
 	var navigation_links = $("#nav-wrap a");
 
 	sections.waypoint({
@@ -58,7 +83,6 @@
 		offset: '35%'
 
 	});
-
 
 /*----------------------------------------------------*/
 /*	Make sure that #header-background-image height is
@@ -98,100 +122,64 @@
 	// });
 
    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-   var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-      document.getElementById("nav-wrap").style.top = "0";
-  } 
-  else {
-      if (currentScrollPos == prevScrollpos) {    
-      }
-      else {
-         document.getElementById("nav-wrap").style.top = "-8rem";
+   var prevScrollpos = window.pageYOffset;
+   window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+     if (prevScrollpos > currentScrollPos) {
+         document.getElementById("nav-wrap").style.top = "0";
+     } 
+     else {
+         if (currentScrollPos == prevScrollpos) {    
          }
-      }
-  prevScrollpos = currentScrollPos;
-}
-
-/*----------------------------------------------------*/
-/*	Modal Popup
-------------------------------------------------------*/
-
-    $('.item-wrap a').magnificPopup({
-
-       type:'inline',
-       fixedContentPos: false,
-       removalDelay: 200,
-       showCloseBtn: false,
-       mainClass: 'mfp-fade'
-
-    });
-
-    $(document).on('click', '.popup-modal-dismiss', function (e) {
-    		e.preventDefault();
-    		$.magnificPopup.close();
-    });
-
-
-/*----------------------------------------------------*/
-/*	Flexslider
-/*----------------------------------------------------*/
-   $('.flexslider').flexslider({
-      namespace: "flex-",
-      controlsContainer: ".flex-container",
-      animation: 'slide',
-      controlNav: true,
-      directionNav: false,
-      smoothHeight: true,
-      slideshowSpeed: 7000,
-      animationSpeed: 600,
-      randomize: false,
-   });
+         else {
+            document.getElementById("nav-wrap").style.top = "-80px";
+            }
+         }
+     prevScrollpos = currentScrollPos;
+   }
 
 /*----------------------------------------------------*/
 /*	contact form
 ------------------------------------------------------*/
 
-   $('form#contactForm button.submit').click(function() {
+   // $('form#contactForm button.submit').click(function() {
 
-      $('#image-loader').fadeIn();
+   //    $('#image-loader').fadeIn();
 
-      var contactName = $('#contactForm #contactName').val();
-      var contactEmail = $('#contactForm #contactEmail').val();
-      var contactSubject = $('#contactForm #contactSubject').val();
-      var contactMessage = $('#contactForm #contactMessage').val();
+   //    var contactName = $('#contactForm #contactName').val();
+   //    var contactEmail = $('#contactForm #contactEmail').val();
+   //    var contactSubject = $('#contactForm #contactSubject').val();
+   //    var contactMessage = $('#contactForm #contactMessage').val();
 
-      var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
+   //    var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
+   //             '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
 
-      $.ajax({
+   //    $.ajax({
 
-	      type: "POST",
-	      url: "inc/sendEmail.php",
-	      data: data,
-	      success: function(msg) {
+	//       type: "POST",
+	//       url: "inc/sendEmail.php",
+	//       data: data,
+	//       success: function(msg) {
 
-            // Message was sent
-            if (msg == 'OK') {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
+   //          // Message was sent
+   //          if (msg == 'OK') {
+   //             $('#image-loader').fadeOut();
+   //             $('#message-warning').hide();
+   //             $('#contactForm').fadeOut();
+   //             $('#message-success').fadeIn();   
+   //          }
+   //          // There was an error
+   //          else {
+   //             $('#image-loader').fadeOut();
+   //             $('#message-warning').html(msg);
+	//             $('#message-warning').fadeIn();
+   //          }
 
-	      }
+	//       }
 
-      });
-      return false;
-   });
-
+   //    });
+   //    return false;
+   // });
 
 });
 

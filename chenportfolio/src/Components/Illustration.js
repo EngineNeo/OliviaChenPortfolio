@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import Gallery from 'react-grid-gallery';
-import LightBox, { Modal, ModalGateway } from "react-images";
-import { Container, Row, Col } from 'react-grid-system';
+// import LightBox, { Modal, ModalGateway } from "react-images";
+// import { Container, Row, Col } from 'react-grid-system';
 
 // var IMAGES = 
 //   [
@@ -40,9 +40,7 @@ class Illustration extends Component {
             source: item.thumbnail
           })),
           loading: false
-        },
-        () => console.log(data)
-        )
+        })
       );
   }
 
@@ -58,57 +56,38 @@ class Illustration extends Component {
     if(this.props.data){
       var thumbnail1 = this.props.data.illustrations[0].thumbnail
       var thumbnail2 = this.props.data.illustrations[1].thumbnail
-      var thumbnail3 = this.props.data.illustrations[2].thumbnail
-      var thumbnail4 = this.props.data.illustrations[3].thumbnail
       
       var title1 = this.props.data.illustrations[0].title
       var title2 = this.props.data.illustrations[1].title
-      var title3 = this.props.data.illustrations[2].title
-      var title4 = this.props.data.illustrations[3].title
     }
 
     return (
       <section id="illustration">
         <h1 className="main-title">Illustrations</h1>
         <hr/>
-        {this.state.loading ? ( // Beginning of Characters
+        {/* {this.state.loading ? ( // Beginning of Characters
             <div className="text-center">Loading...</div>
           ) : (
             <>
             <Container fluid>
-              <Row justify="center">
-                <Col md={4.1}><img src={thumbnail1} 
+              <Row justify="center" style={{marginTop: "150px"}}>
+                <Col md={6}><img 
+                className="Lightbox"
+                src={thumbnail1} 
                 alt="illustration"
                 key={0}
                 style={{boxShadow: "0px 3px 4px rgba(0, 0, 0, .5)"}}
                 onClick={() => this.toggleLightbox(this.props.data.illustrations[0], 0)}/>
                 <h4 className='hoverText'>{title1}</h4>
                 </Col>
-                <Col md={1.5}><img 
+                <Col md={4.5}><img 
+                className="Lightbox"
                 src={thumbnail2} 
                 alt="illustration"
                 key={1}
                 style={{boxShadow: "0px 3px 4px rgba(0, 0, 0, .5)"}}
                 onClick={() => this.toggleLightbox(this.props.data.illustrations[1], 1)}/>
                 <h4 className='hoverText'>{title2}</h4>
-                </Col>
-              </Row>
-              <Row justify="center">
-                <Col md={1.79}><img 
-                src={thumbnail3} 
-                alt="illustration"
-                key={2}
-                style={{boxShadow: "0px 3px 4px rgba(0, 0, 0, .5)"}}
-                onClick={() => this.toggleLightbox(this.props.data.illustrations[2], 2)}/>
-                <h4 className='hoverText'>{title3}</h4>
-                </Col>
-                <Col md={4}><img 
-                src={thumbnail4} 
-                alt="illustration"
-                key={3}
-                style={{boxShadow: "0px 3px 4px rgba(0, 0, 0, .5)"}}
-                onClick={() => this.toggleLightbox(this.props.data.illustrations[3], 3)}/>
-                <h4 className='hoverText'>{title4}</h4>
                 </Col>
               </Row>
               <ModalGateway>
@@ -131,7 +110,7 @@ class Illustration extends Component {
               </ModalGateway>
             </Container>
             </>
-          )}
+          )} */}
       </section>
     );
   }

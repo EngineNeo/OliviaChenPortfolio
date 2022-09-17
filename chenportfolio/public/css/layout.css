@@ -46,42 +46,20 @@ body { background: #ffffff; }
    margin: 2rem auto 2rem;
 }
 
-.my-masonry-grid {
-   display: -webkit-box; /* Not needed if autoprefixing */
-   display: -ms-flexbox; /* Not needed if autoprefixing */
-   display: flex;
-   margin-left: -30px; /* gutter size offset */
- }
- .my-masonry-grid_column {
-   padding-left: 30px; /* gutter size */
-   background-clip: padding-box;
- }
- 
- /* Style your items */
- .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-   background: grey;
-   margin-bottom: 30px;
- }
-
-img {
-   cursor: pointer;
-   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-   transition: 0.2s;
-   transform: scale(1);
-}
-
-img:hover {
-   opacity: 0.75;
-   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-   transition: 0.2s;
-   transform: scale(1.025);
- }
-
 .main-title {
    padding: 5rem 2rem 1rem;
    color: white;
    font-size: 8rem;
    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+}
+
+.imageItem
+{
+   margin: 5px;
+}
+
+img:hover {
+   cursor: pointer;
 }
 
 /* ------------------------------------------------------------------ */
@@ -92,7 +70,6 @@ header {
    position: relative;
    height: 100vh;
    min-height: 100vh;
-   width: 100%;
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
    background-size: cover !important;
    background-attachment: fixed;
@@ -221,7 +198,6 @@ ul#nav li {
    height: 48px;
    display: inline-block;
 }
-
 /* Links */
 ul#nav li a {
 
@@ -273,6 +249,20 @@ ul#nav li.current a { color: #F06000; }
    transform: translate(-50%, -50%);
 }
 
+#conceptArt img {
+   cursor: pointer;
+   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+   transition: 0.2s;
+   transform: scale(1);
+}
+
+#conceptArt img:hover{
+   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+   transition: 0.2s;
+   opacity: 0.5;
+   transform: scale(1.025);
+}
+
 #conceptArt img:hover + h4{
    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
    transition: 0.2s;
@@ -292,10 +282,6 @@ ul#nav li.current a { color: #F06000; }
    overflow: hidden;
 }
 
-#illustration hr {
-   margin: 4rem auto 4rem;
-}
-
 #illustration img + .hoverText {
    opacity: 0;
    position: absolute;
@@ -304,11 +290,22 @@ ul#nav li.current a { color: #F06000; }
    transform: translate(-50%, -50%);
 }
 
+#illustration img {
+   cursor: pointer;
+   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+   transition: 0.2s;
+   transform: scale(1);
+}
+
 #illustration img:hover {
-   opacity: 0.75;
+   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+   transition: 0.2s;
+   opacity: 0.5;
+   transform: scale(1.025);
+   opacity: 0.5;
  }
 
- #illustration img:hover + .hoverText{
+#illustration img:hover + .hoverText{
    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
    transition: 0.2s;
    opacity: 1;
@@ -323,6 +320,36 @@ ul#nav li.current a { color: #F06000; }
    background: #b4b4b4;
    height: 100vh;
    min-height: 100vh;
+}
+
+#traditionalArt img + .hoverText {
+   opacity: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+#traditionalArt img {
+   cursor: pointer;
+   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+   transition: 0.2s;
+   transform: scale(1);
+}
+
+#traditionalArt img:hover {
+   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+   transition: 0.2s;
+   opacity: 0.5;
+   transform: scale(1.025);
+   opacity: 0.5;
+ }
+
+#traditionalArt img:hover + .hoverText{
+   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+   transition: 0.2s;
+   opacity: 1;
+   color: #0F0F0F;
 }
 
 /* ------------------------------------------------------------------
