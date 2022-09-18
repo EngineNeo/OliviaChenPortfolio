@@ -6,55 +6,96 @@ import 'pro-gallery/dist/statics/main.css';
 
 const items = [
   { // Image item:
-    itemId: 'sample-id',
-    mediaUrl: 'https://i.picsum.photos/id/674/200/300.jpg?hmac=kS3VQkm7AuZdYJGUABZGmnNj_3KtZ6Twgb5Qb9ITssY',
+    itemId: '1',
+    mediaUrl: '/images/studies/studyThumbnails/Still_Life.jpg',
     metaData: {
       type: 'image',
-      height: 200,
-      width: 100,
+      height: 2967,
+      width: 1920,
       title: 'sample-title',
       description: 'sample-description',
-      focalPoint: [0, 0],
-      link: {
-        url: 'http://example.com',
-        target: '_blank'
-      },
     }
   },
   { // Another Image item:
-    itemId: 'differentItem',
-    mediaUrl: 'https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk',
+    itemId: '2',
+    mediaUrl: '/images/studies/studyThumbnails/A_Man.jpg',
     metaData: {
       type: 'image',
-      height: 200,
-      width: 100,
+      height: 1242,
+      width: 1920,
       title: 'sample-title',
       description: 'sample-description',
-      focalPoint: [0, 0],
-      link: {
-        url: 'http://example.com',
-        target: '_blank'
-      },
+    },
+  },
+  { // Image item:
+    itemId: '3',
+    mediaUrl: '/images/studies/studyThumbnails/ColorStudy2.jpg',
+    metaData: {
+      type: 'image',
+      height: 1116,
+      width: 1579,
+      title: 'sample-title',
+      description: 'sample-description',
     }
   },
-  { // HTML item:
-    itemId: 'htmlItem',
-    html: "<div style='width: 300px; height: 200px; background:pink;'>I am a text block</div>",
-    metadata: {
-      type: "text",
-      height: 200,
-      width: 300,
+  { // Image item:
+    itemId: '4',
+    mediaUrl: '/images/studies/studyThumbnails/ColorStudy1.jpg',
+    metaData: {
+      type: 'image',
+      height: 1530,
+      width: 1063,
       title: 'sample-title',
       description: 'sample-description',
-      backgroundColor: 'pink'
-    },
-
+    }
+  },
+  { // Image item:
+    itemId: '5',
+    mediaUrl: '/images/studies/studyThumbnails/BruceLee.jpg',
+    metaData: {
+      type: 'image',
+      height: 1740,
+      width: 1740,
+      title: 'sample-title',
+      description: 'sample-description',
+    }
+  },
+  { // Image item:
+    itemId: '6',
+    mediaUrl: '/images/studies/studyThumbnails/15feet.jpg',
+    metaData: {
+      type: 'image',
+      height: 825,
+      width: 1275,
+      title: 'sample-title',
+      description: 'sample-description',
+    }
   },
 ]
 
 // The options of the gallery (from the playground current state)
 const options = {
-  galleryLayout: -1,
+    layoutParams: {
+        structure: {
+            galleryLayout: -1
+        },
+        targetItemSize: {
+          minimum: 6,
+          unit: "PIXEL",
+          value: 750
+      },
+        groups: {
+            groupSize: 2
+        }
+    },
+    behaviourParams: {
+        item: {
+            overlay: {
+                position: "CENTERED_HORIZONTALLY",
+            },
+            clickAction: "ACTION"
+        }
+    }
 };
 
 // The size of the gallery container. The images will fit themselves in it
@@ -103,7 +144,6 @@ class ConceptArt extends Component {
         <section id="conceptArt">
 
           <h1 className="main-title">Concept Art</h1>
-          <div className="container">
           <ProGallery
             items={items}
             options={options}
@@ -137,7 +177,6 @@ class ConceptArt extends Component {
                       );
                     })}
             </Gallery> */}
-          </div>
         </section>
         
     );
