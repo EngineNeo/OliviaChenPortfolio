@@ -46,7 +46,7 @@ class Header extends Component {
 	      <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
 
          <ul id="nav" className="nav">
-            <li className="navbar-logo" href=""><a onClick={() => scroll.scrollToTop()}>
+            <li className="navbar-logo" href=""><a href="#home" onClick={() => scroll.scrollToTop()}>
                <img 
                className="logo-img1" 
                src={logo} 

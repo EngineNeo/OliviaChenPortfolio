@@ -1,207 +1,145 @@
 import React, { Component } from 'react';
-// import Carousel from "react-multi-carousel";
-// import "react-multi-carousel/lib/styles.css";
-// import LightBox, { Modal, ModalGateway } from "react-images";
+import 'photoswipe/dist/photoswipe.css'
+import { Gallery, Item } from 'react-photoswipe-gallery'
+import { ProGallery } from 'pro-gallery';
+import 'pro-gallery/dist/statics/main.css';
 
+const items = [
+  { // Image item:
+    itemId: 'sample-id',
+    mediaUrl: 'https://i.picsum.photos/id/674/200/300.jpg?hmac=kS3VQkm7AuZdYJGUABZGmnNj_3KtZ6Twgb5Qb9ITssY',
+    metaData: {
+      type: 'image',
+      height: 200,
+      width: 100,
+      title: 'sample-title',
+      description: 'sample-description',
+      focalPoint: [0, 0],
+      link: {
+        url: 'http://example.com',
+        target: '_blank'
+      },
+    }
+  },
+  { // Another Image item:
+    itemId: 'differentItem',
+    mediaUrl: 'https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk',
+    metaData: {
+      type: 'image',
+      height: 200,
+      width: 100,
+      title: 'sample-title',
+      description: 'sample-description',
+      focalPoint: [0, 0],
+      link: {
+        url: 'http://example.com',
+        target: '_blank'
+      },
+    }
+  },
+  { // HTML item:
+    itemId: 'htmlItem',
+    html: "<div style='width: 300px; height: 200px; background:pink;'>I am a text block</div>",
+    metadata: {
+      type: "text",
+      height: 200,
+      width: 300,
+      title: 'sample-title',
+      description: 'sample-description',
+      backgroundColor: 'pink'
+    },
 
-// const carouselStyle = {
-//   display: "flex",
-//   justifyContent: "center",
-//   alignItems: "center",
-//   width: "90%",
-//   // border: "1rem solid #ffffff",
-//   boxShadow: "0px 5px 6px rgba(0, 0, 0, .5)"
-// }
-
-const IMAGES = [
-  "images/ConceptArt/character/CharacterThumbnails/AhJingThumbnail.jpg",
-  "images/ConceptArt/character/CharacterThumbnails/AlexConceptThumbnail.jpg",
-  "images/ConceptArt/character/CharacterThumbnails/LapuThumbnail.jpg"
+  },
 ]
+
+// The options of the gallery (from the playground current state)
+const options = {
+  galleryLayout: -1,
+};
+
+// The size of the gallery container. The images will fit themselves in it
+const container = {
+  width: window.innerWidth,
+  height: window.innerHeight
+};
+
+// The eventsListener will notify you anytime something has happened in the gallery.
+const eventsListener = (eventName, eventData) => console.log({eventName, eventData}); 
+
+// The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
+const scrollingElement = window;
 
 class ConceptArt extends Component {
   _isMounted = false;
 
-  // state = {
-  //   imageCharacters: [],
-  //   imageProps: [],
-  //   loading: false,
-  //   characterLBIsOpen: false,
-  //   propLBIsOpen: false,
-  //   selectedCharacter: {},
-  //   selectedProp: {}
-  // };
+  state = {
+    studies: [],
+    loading: false,
+  };
 
-  // componentDidMount() {
-  //   this._isMounted = true;
-  //   console.log("app mounted");
-  //   this.setState({ loading: true });
-  //   fetch("portfolioData.json")
-  //     .then(data => data.json())
-  //     .then(data =>
-  //       this.setState(
-  //         {
-  //           imageCharacters: data.images.conceptart.characters.map(item => ({
-  //             ...item,
-  //             source: item.imageThumbnail
-  //           })),
-  //           imageProps: data.images.conceptart.props.map(item => ({
-  //             ...item,
-  //             source: item.imageThumbnail
-  //           })),
-  //           loading: false
-  //         })
-  //     );
-  // }
-  // componentWillUnmount() {
-  //   this._isMounted = false;
-  // }
-
-  // toggleCharacterLightbox = (post, selectedIndex) => {
-  //   this.setState(state => ({
-  //     characterLBIsOpen: !state.characterLBIsOpen,
-  //     selectedCharacter: { title: post.title, index: selectedIndex },
-  //   }));
-  // };
-
-  // togglePropLightbox = (post, selectedIndex) => {
-  //   this.setState(state => ({
-  //     propLBIsOpen: !state.propLBIsOpen,
-  //     selectedProp: { title: post.title, index: selectedIndex }
-  //   }));
-  // };
+  componentDidMount() {
+    this._isMounted = true;
+    console.log("app mounted");
+    this.setState({ loading: true });
+    fetch("portfolioData.json")
+      .then(data => data.json())
+      .then(data =>
+        this.setState(
+          {
+            studies: data.images.studies.map(item => ({
+              ...item,
+              source: item.thumbnail
+            })),
+            loading: false
+          })
+      );
+  }
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
 
   render() {
-
     return (
         <section id="conceptArt">
-          <h1 className="main-title">Concept Art</h1>
-          <hr/>
-          <div id="nanogallery2" data-nanogallery2='{
-            "thumbnailHeight":  "auto",
-            "thumbnailWidth":   "auto",
-            "kind": "nano_photos_provider2",
-            "dataProvider": "nano_photos_provider2/nano_photos_provider2.php",
-            "contentFolder": "nano_photos_content/ConceptArt/character/ProjectSpaceOpera"'>
-          </div>
 
-          {/* <h1 className="main-title">Concept Art</h1>
-          <h2>Characters</h2>
-          <hr/>
-          {this.state.loading ? ( // Beginning of Characters
-            <div className="text-center">Loading...</div>
-          ) : (
-            <>
-              <Carousel
-                additionalTransfrom={0}
-                showDots={false}
-                arrows={true}
-                autoPlaySpeed={3000}
-                autoPlay={true}
-                centerMode={true}
-                draggable={false}
-                focusOnSelect={false}
-                infinite
-                minimumTouchDrag={80}
-                renderButtonGroupOutside={false}
-                renderDotsOutside={true}
-                responsive={responsive}
-              >
-                {Object.values(this.state.imageCharacters).map((post, indx) => {
-                  return (
-                    <div
-                      key={indx}
-                      onClick={() => this.toggleCharacterLightbox(post, indx)}
-                    >
-                      <img
-                        className="Lightbox"
-                        src={post.imageThumbnail}
-                        alt="Alt text"
-                        style={carouselStyle}
-                      />
-                      <h4>{post.title}</h4>
-                    </div>
-                  );
-                })}
-              </Carousel>
-              <ModalGateway>
-                {this.state.characterLBIsOpen ? (
-                  <Modal onClose={this.toggleCharacterLightbox}>
-                    <LightBox
-                      components={{
-                        FooterCaption: props => {
-                          return (
-                            <div>{props.currentView.title}</div>
-                          );
-                        }
-                      }}
-                      currentIndex={this.state.selectedCharacter.index}
-                      frameProps={{ autoSize: "height" }}
-                      views={this.state.imageCharacters}
-                    />
-                  </Modal>
-                ) : null}
-              </ModalGateway>
-            </>
-          )}
-          <h2>Props</h2>
-          <hr/>
-          {this.state.loading ? ( // Beginning of Props
-            <div className="text-center">Loading...</div>
-          ) : (
-            <>
-              <Carousel
-                additionalTransfrom={0}
-                showDots={false}
-                arrows={true}
-                autoPlaySpeed={5000}
-                autoPlay={true}
-                centerMode={true}
-                draggable={false}
-                focusOnSelect={false}
-                infinite
-                minimumTouchDrag={80}d
-                renderButtonGroupOutside={false}
-                renderDotsOutside={true}
-                responsive={responsive}
-              >
-                {Object.values(this.state.imageProps).map((post, indx) => {
-                  return (
-                    <div
-                      key={indx}
-                      onClick={() => this.togglePropLightbox(post, indx)}
-                    >
-                      <img
-                        src={post.imageThumbnail}
-                        alt="Alt text"
-                        style={carouselStyle}
-                      />
-                      <h4>{post.title}</h4>
-                    </div>
-                  );
-                })}
-              </Carousel>
-              <ModalGateway>
-                {this.state.propLBIsOpen ? (
-                  <Modal onClose={this.togglePropLightbox}>
-                    <LightBox
-                      components={{
-                        FooterCaption: props => {
-                          return (
-                            <div>{props.currentView.title}</div>
-                          );
-                        }
-                      }}
-                      currentIndex={this.state.selectedProp.index}
-                      frameProps={{ autoSize: "height" }}
-                      views={this.state.imageProps}
-                    />
-                  </Modal>
-                ) : null}
-              </ModalGateway>
-            </>
-          )} */}
+          <h1 className="main-title">Concept Art</h1>
+          <div className="container">
+          <ProGallery
+            items={items}
+            options={options}
+            container={container}
+            eventsListener={eventsListener}
+            scrollingElement={scrollingElement}
+          />
+            {/* <Gallery
+
+            rowHeight={100}
+            enableLightbox={false}
+            enableImageSelection={false}>
+              {Object.values(this.state.studies).map((post, divKey) => {
+                      return (
+                        <div key={divKey}>
+                          <Item
+                            original={post.original}
+                            thumbnail={post.thumbnail}
+                            width={post.width}
+                            height={post.height}
+                          >
+                            {({ ref, open }) => (
+                              <img className="imageItem" 
+                              ref={ref} 
+                              onClick={open}
+                              src={post.thumbnail}
+                              alt="Concept Art" />
+                            )}
+                          </Item>
+                        </div>
+                      );
+                    })}
+            </Gallery> */}
+          </div>
         </section>
+        
     );
   }
 }
