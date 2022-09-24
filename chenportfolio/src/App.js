@@ -43,8 +43,8 @@ class App extends Component {
         <Header data={this.state.portfolioData.main}/>
         <ConceptArt data={this.state.portfolioData.images}/>
         <Illustration data={this.state.portfolioData.images}/>
-        <TraditionalArt data={this.state.portfolioData.images}/>
         <Study data={this.state.portfolioData.images}/>
+        <TraditionalArt data={this.state.portfolioData.images}/>
         <Contact data={this.state.portfolioData.main}/>
         <Footer data={this.state.portfolioData.main}/>
       </div>

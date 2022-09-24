@@ -61,8 +61,8 @@ class Header extends Component {
             </li>
             <li><a href="#conceptArt" onClick={() => this.scrollTo("conceptArt")}>Concept Art</a></li>
 	         <li><a href="#illustration" onClick={() => this.scrollTo("illustration")}>Illustration</a></li>
-            <li><a href="#traditionalArt" onClick={() => this.scrollTo("traditionalArt")}>Traditional Art</a></li>
             <li><a href="#study" onClick={() => this.scrollTo("study")}>Study</a></li>
+            <li><a href="#traditionalArt" onClick={() => this.scrollTo("traditionalArt")}>Traditional Art</a></li>
             <li><a href="#contact" onClick={() => this.scrollTo("contact")}>Contact Me</a></li>
          </ul>
 
