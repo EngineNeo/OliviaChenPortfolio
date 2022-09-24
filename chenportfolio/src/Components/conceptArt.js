@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ProGallery } from 'pro-gallery';
+import { Link } from 'react-router-dom';
 
 // The options of the gallery (from the playground current state)
 const options = {
@@ -86,6 +87,10 @@ class ConceptArt extends Component {
             container={container}
             customHoverRenderer={customHoverRenderer}
           />
+          <Link to="/moreCA">
+            <button>See More</button>
+          </Link>
+          
             {/* <Gallery
 
             rowHeight={100}

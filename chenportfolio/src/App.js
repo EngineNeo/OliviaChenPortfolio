@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ConceptArt from './Components/conceptArt';
+import moreCA from './Components/moreCA';
 import Illustration from './Components/Illustration';
 import Contact from './Components/Contact';
 import Study from './Components/Study';
 import TraditionalArt from './Components/traditionalArt';
+import { Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 
 class App extends Component {
 
@@ -18,35 +19,23 @@ class App extends Component {
     };
   }
 
-  getPortfolioData(){
-    $.ajax({
-      url:'/portfolioData.json',
-      dataType: 'json',
-      cache: false,
-      success: function(data){
-        this.setState({portfolioData: data});
-      }.bind(this),
-      error: function(xhr, status, err){
-        console.log(err);
-        alert(err);
-      }
-    });
-  }
-
-  componentDidMount(){
-    this.getPortfolioData();
-  }
-
   render() {
     return (
       <div className="App">
-        <Header data={this.state.portfolioData.main}/>
-        <ConceptArt data={this.state.portfolioData.images}/>
-        <Illustration data={this.state.portfolioData.images}/>
-        <Study data={this.state.portfolioData.images}/>
-        <TraditionalArt data={this.state.portfolioData.images}/>
-        <Contact data={this.state.portfolioData.main}/>
-        <Footer data={this.state.portfolioData.main}/>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Header/>
+              <ConceptArt/>
+              <Illustration/>
+              <Study/>
+              <TraditionalArt/>
+              <Contact/>
+              <Footer/>
+            </Route>
+            <Route path="/moreCA" component={moreCA}/>
+          </Switch>
+        </Router>
       </div>
     );
   }

@@ -26,16 +26,39 @@ class Header extends Component {
     })
   }
 
+  _isMounted = false;
+
+  state = {
+    header: [],
+    loading: false,
+  };
+
+  componentDidMount() {
+    this._isMounted = true;
+    this.setState({ loading: true });
+    fetch("portfolioData.json")
+      .then(data => data.json())
+      .then(data =>
+        this.setState(
+          {
+            header: data.main,
+            loading: false
+          })
+      );
+  }
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
 
   render() {
 
-    if(this.props.data){
-      var name = this.props.data.name;
-      var description= this.props.data.description;
-      var networks= this.props.data.social.map(function(network){
-        return <li key={network.name}><a href={network.url}><i className={network.className}></i></a></li>
-      })
-    }
+   //  if(this.props.data){
+   //    var name = this.props.data.name;
+   //    var description= this.props.data.description;
+   //    var networks= this.props.data.social.map(function(network){
+   //      return <li key={network.name}><a href={network.url}><i className={network.className}></i></a></li>
+   //    })
+   //  }
 
     return (
       <header id="home">
@@ -70,10 +93,10 @@ class Header extends Component {
 
       <div className="row banner">
          <div className="banner-text">
-            <h1 className="responsive-headline">{name}</h1>
-            <h3>{description}.</h3>
+            <h1 className="responsive-headline">{this.state.header.name}</h1>
+            <h3>{this.state.header.description}.</h3>
             <ul className="social">
-               {networks}
+               {this.state.header.networks}
             </ul>
          </div>
       </div>
