@@ -74,12 +74,13 @@ class TraditionalArt extends Component {
       <section id="traditionalArt">
         <h1 className="main-title">Traditional Art</h1>
         <ProGallery
-            items={this.state.traditionalwork}
-            options={options}
-            container={container}
-            eventsListener={eventsListener}
-            scrollingElement={scrollingElement}
-          />
+          id="traditionalart"
+          items={this.state.traditionalwork}
+          options={options}
+          container={container}
+          eventsListener={eventsListener}
+          scrollingElement={scrollingElement}
+        />
       </section>
     );
   }

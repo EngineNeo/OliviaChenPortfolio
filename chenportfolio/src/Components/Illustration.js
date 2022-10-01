@@ -73,11 +73,12 @@ class Illustration extends Component {
       <section id="illustration">
         <h1 className="main-title">Illustrations</h1>
         <ProGallery
-            items={this.state.illustrations}
-            options={options}
-            container={container}
-            eventsListener={eventsListener}
-            scrollingElement={scrollingElement}
+          id="illustration"
+          items={this.state.illustrations}
+          options={options}
+          container={container}
+          eventsListener={eventsListener}
+          scrollingElement={scrollingElement}
           />
       </section>
     );

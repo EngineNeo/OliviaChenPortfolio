@@ -77,12 +77,13 @@ class Study extends Component {
    <section id="study">
     <h1 className="main-title">Study</h1>
     <ProGallery
-            items={this.state.studies}
-            options={options}
-            container={container}
-            eventsListener={eventsListener}
-            scrollingElement={scrollingElement}
-          />
+      id="study"
+      items={this.state.studies}
+      options={options}
+      container={container}
+      eventsListener={eventsListener}
+      scrollingElement={scrollingElement}
+    />
    </section>
    )
   }
