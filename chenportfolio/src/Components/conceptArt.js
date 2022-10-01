@@ -82,6 +82,7 @@ class ConceptArt extends Component {
 
           <h1 className="main-title">Concept Art</h1>
           <ProGallery
+            id="conceptart"
             items={this.state.conceptArt}
             options={options}
             container={container}

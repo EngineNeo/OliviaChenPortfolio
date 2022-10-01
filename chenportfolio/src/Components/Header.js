@@ -102,7 +102,7 @@ class Header extends Component {
       </div>
 
       <p className="scrolldown">
-         <a className="smoothscroll" href="#conceptArt"><i className="icon-down-circle"></i></a>
+         <a className="smoothscroll" href="#conceptArt" onClick={() => this.scrollTo("conceptArt")}><i className="icon-down-circle"></i></a>
       </p>
 
    </header>
