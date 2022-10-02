@@ -17,14 +17,14 @@ const options = {
       //   layoutDirection: "RIGHT_TO_LEFT"
       // },
       item: {
-          overlay: {
-              position: "CENTERED_HORIZONTALLY",
-          },
-          content: {
-            hoverAnimation: "ZOOM_IN"
-          },
-          clickAction: "MAGNIFY"
-      }
+        overlay: {
+            hoverAnimation: "EXPAND"
+        },
+        // content: {
+        //   hoverAnimation: "ZOOM_IN"
+        // },
+        clickAction: "MAGNIFY"
+    }
   }
 };
 

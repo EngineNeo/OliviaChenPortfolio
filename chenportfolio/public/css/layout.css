@@ -22,7 +22,7 @@
 /* a. General Styles
 /* ------------------------------------------------------------------ */
 
-body { background: #ffffff; }
+body { background: rgb(235,235,235); }
 
 .column {
    display: grid;
@@ -51,6 +51,7 @@ body { background: #ffffff; }
    color: white;
    font-size: 8rem;
    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+   color: #ff893b;
 }
 
 .imageItem
@@ -75,7 +76,14 @@ img:hover {
 ::-webkit-scrollbar-thumb
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+   box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: rgb(65, 65, 65);
+}
+
+#container {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
 }
 
 /* ------------------------------------------------------------------ */
@@ -234,14 +242,13 @@ ul#nav li a {
 }
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #F06000; }
+ul#nav li.current a { color: #ffb30d; }
 
 /* ------------------------------------------------------------------ */
 /* c. Concept Art Section
 /* ------------------------------------------------------------------ */
 
 #conceptArt {
-   background: #dfdfdf;
    min-height: 100vh;
    width: 100%;
    background-size: cover !important;
@@ -287,11 +294,25 @@ ul#nav li.current a { color: #F06000; }
 }
 
 /* ------------------------------------------------------------------ */
+/* d. MoreCA Section
+/* ------------------------------------------------------------------ */
+
+#moreCA .description{
+   margin: 25px 0px 25px;
+   padding: 50px 50px;
+   background-color: white;
+}
+
+#moreCA .description > p{
+   width: 50%;
+   font-size: x-large;
+}
+
+/* ------------------------------------------------------------------ */
 /* d. Illustration Section
 /* ------------------------------------------------------------------ */
 
 #illustration {
-   background: #c7c7c7;
    position: relative;
    min-height: 75vh;
    overflow: hidden;
@@ -332,7 +353,6 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #traditionalArt {
-   background: #b4b4b4;
    min-height: 100vh;
 }
 
@@ -371,7 +391,6 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #study {
-   background: #a3a3a3;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    background-attachment: fixed;
@@ -655,7 +674,7 @@ footer .social-links li {
     margin: 0;
     padding: 0;
     margin-left: 42px;
-    color: #F06000;
+    color: #ffb30d;
 }
 
 footer .social-links li:first-child { margin-left: 0; }

@@ -1,6 +1,54 @@
 import React, { Component } from 'react';
+import {animateScroll as scroll, scroller } from 'react-scroll'
 
 class Footer extends Component {
+
+  constructor(props) {
+    super(props);
+    this.scrollToTop = this.scrollToTop.bind(this);
+  }
+
+ scrollToTop() {
+    scroll.scrollToTop({
+       duration: 1000,
+       delay: 0,
+       smooth: 'easeInOutQuart'
+    });
+  }
+
+ scrollTo(pageRef) {
+  scroller.scrollTo(pageRef, {
+    duration: 1000,
+    delay: 0,
+    smooth: 'easeInOutQuart'
+  })
+}
+
+_isMounted = false;
+
+state = {
+  header: [],
+  loading: false,
+};
+
+componentDidMount() {
+  this._isMounted = true;
+  this.setState({ loading: true });
+  fetch("portfolioData.json")
+    .then(data => data.json())
+    .then(data =>
+      this.setState(
+        {
+          header: data.main,
+          loading: false
+        })
+    );
+}
+componentWillUnmount() {
+  this._isMounted = false;
+}
+
+
   render() {
 
     if(this.props.data){
@@ -23,7 +71,7 @@ class Footer extends Component {
            </ul>
 
         </div>
-        <div id="go-top"><a className="smoothscroll" title="Back to Top" href="#home"><i className="icon-up-open"></i></a></div>
+        <div id="go-top"><a title="Back to Top" href="#" onClick={() => this.scrollToTop()}><i className="icon-up-open"></i></a></div>
      </div>
   </footer>
     );

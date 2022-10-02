@@ -18,24 +18,24 @@ const options = {
         //   layoutDirection: "RIGHT_TO_LEFT"
         // },
         item: {
-            overlay: {
-                position: "CENTERED_HORIZONTALLY",
-            },
-            content: {
-              hoverAnimation: "ZOOM_IN"
-            },
-            clickAction: "MAGNIFY"
-        }
+          overlay: {
+              hoverAnimation: "EXPAND"
+          },
+          // content: {
+          //   hoverAnimation: "ZOOM_IN"
+          // },
+          clickAction: "MAGNIFY"
+      }
     }
 };
 
 // Custom Hover Renderer
-const customHoverRenderer = (itemProps) => (
-  <div>
-      <p>{itemProps.title}</p>
-      <p>{itemProps.description}</p>
-  </div>
-);
+// const customHoverRenderer = (itemProps) => (
+//   <div>
+//       <p>{itemProps.title}</p>
+//       <p>{itemProps.description}</p>
+//   </div>
+// );
 
 // The size of the gallery container. The images will fit themselves in it
 const container = {
@@ -86,7 +86,6 @@ class ConceptArt extends Component {
             items={this.state.conceptArt}
             options={options}
             container={container}
-            customHoverRenderer={customHoverRenderer}
           />
           <Link to="/moreCA">
             <button>See More</button>

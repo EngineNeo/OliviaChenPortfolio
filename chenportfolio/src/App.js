@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ConceptArt from './Components/conceptArt';
-import moreCA from './Components/moreCA';
+import MoreCA from './Components/moreCA';
 import Illustration from './Components/Illustration';
 import Contact from './Components/Contact';
 import Study from './Components/Study';
@@ -33,7 +33,10 @@ class App extends Component {
               <Contact/>
               <Footer/>
             </Route>
-            <Route path="/moreCA" component={moreCA}/>
+            <Route path="/moreCA">
+              <MoreCA/>
+              <Footer/>
+            </Route>
           </Switch>
         </Router>
       </div>
