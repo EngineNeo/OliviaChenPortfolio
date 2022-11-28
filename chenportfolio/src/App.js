@@ -9,6 +9,7 @@ import Contact from './Components/Contact';
 import Study from './Components/Study';
 import TraditionalArt from './Components/traditionalArt';
 import { Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import ScrollToTop from "./Components/ScrollToTop";
 
 class App extends Component {
 
@@ -21,24 +22,25 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Header/>
-              <ConceptArt/>
-              <Illustration/>
-              <Study/>
-              <TraditionalArt/>
-              <Contact/>
-              <Footer/>
-            </Route>
-            <Route path="/moreCA">
-              <MoreCA/>
-              <Footer/>
-            </Route>
-          </Switch>
-        </Router>
+      <div className="App">      
+          <Router>
+          <ScrollToTop />
+            <Switch>
+              <Route exact path="/">
+                <Header/>
+                <ConceptArt/>
+                <Illustration/>
+                <Study/>
+                <TraditionalArt/>
+                <Contact/>
+                <Footer/>
+              </Route>
+              <Route path="/moreCA">
+                <MoreCA/>
+                <Footer/>
+              </Route>
+            </Switch>
+          </Router>
       </div>
     );
   }

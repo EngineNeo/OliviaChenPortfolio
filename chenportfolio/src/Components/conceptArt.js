@@ -88,7 +88,7 @@ class ConceptArt extends Component {
             container={container}
           />
           <Link to="/moreCA">
-            <button>See More</button>
+              <button className="cool-button">See More</button>
           </Link>
           
             {/* <Gallery
