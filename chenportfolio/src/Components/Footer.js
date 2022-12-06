@@ -71,7 +71,7 @@ componentWillUnmount() {
            </ul>
 
         </div>
-        <div id="go-top"><a title="Back to Top" href="#" onClick={() => this.scrollToTop()}><i className="icon-up-open"></i></a></div>
+        <div id="go-top"><a title="Back to Top" href="#go-top" onClick={() => this.scrollToTop()}><i className="icon-up-open"></i></a></div>
      </div>
   </footer>
     );

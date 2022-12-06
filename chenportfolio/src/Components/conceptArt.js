@@ -4,29 +4,28 @@ import { Link } from 'react-router-dom';
 
 // The options of the gallery (from the playground current state)
 const options = {
-    layoutParams: {
-        structure: {
-            galleryLayout: -1
-        },
-        targetItemSize: {
-          unit: "PIXEL",
-          value: 450
-      }
-    },
-    behaviourParams: {
-        // gallery: {
-        //   layoutDirection: "RIGHT_TO_LEFT"
-        // },
-        item: {
-          overlay: {
-              hoverAnimation: "EXPAND"
-          },
-          // content: {
-          //   hoverAnimation: "ZOOM_IN"
-          // },
-          clickAction: "MAGNIFY"
-      }
+  layoutParams: {
+      structure: {
+          galleryLayout: -1
+      },
+      targetItemSize: {
+        unit: "PIXEL",
+        value: 450
     }
+  },
+  // behaviourParams: {
+  //     // gallery: {
+  //     //   layoutDirection: "RIGHT_TO_LEFT"
+  //     // },
+  //     item: {
+  //       overlay: {
+  //           hoverAnimation: "EXPAND"
+  //       },
+  //       // content: {
+  //       //   hoverAnimation: "ZOOM_IN"
+  //       // },
+  //   }
+  // }
 };
 
 // Custom Hover Renderer
@@ -77,6 +76,24 @@ class ConceptArt extends Component {
   }
 
   render() {
+
+    const customInfoRenderer = (itemProps) => {
+      if (window.innerWidth < 750)
+        return (
+          <span style={{ width: "80%" }} className="img-text">
+            {itemProps.title}
+            {itemProps.description}
+          </span>
+        );
+      else
+        return (
+          <span style={{ width: "80%" }} className="img-text">
+            {itemProps.title}
+          </span>
+        );
+    };
+
+  
     return (
         <section id="conceptArt">
 
@@ -86,6 +103,7 @@ class ConceptArt extends Component {
             items={this.state.conceptArt}
             options={options}
             container={container}
+            customHoverRenderer={customInfoRenderer}
           />
           <Link to="/moreCA">
               <button className="cool-button">See More</button>

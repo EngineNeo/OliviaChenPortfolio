@@ -42,6 +42,9 @@ class Header extends Component {
         this.setState(
           {
             header: data.main,
+            currentImage: data.images.illustrations.map(item => ({
+              ...item
+            })),
             loading: false
           })
       );
@@ -61,35 +64,35 @@ class Header extends Component {
    //  }
 
     return (
-      <header id="home">
+      <section id="home">
 
-      <nav id="nav-wrap">
+         <nav id="nav-wrap">
 
-         <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
+            <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+            <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
 
-         <ul id="nav" className="nav">
-            <li className="navbar-logo" href=""><a href="#home" onClick={() => scroll.scrollToTop()}>
-               <img 
-               className="logo-img1" 
-               src={logo} 
-               alt="Home" 
-               style={{
-                  height: "4.75rem", 
-                  width: "4.75rem",
-                  verticalAlign: "middle",
-                  }}
-               ></img>
-               </a>
-            </li>
-            <li><a href="#conceptArt" onClick={() => this.scrollTo("conceptArt")}>Concept Art</a></li>
-	         <li><a href="#illustration" onClick={() => this.scrollTo("illustration")}>Illustration</a></li>
-            <li><a href="#study" onClick={() => this.scrollTo("study")}>Study</a></li>
-            <li><a href="#traditionalArt" onClick={() => this.scrollTo("traditionalArt")}>Traditional Art</a></li>
-            <li><a href="#contact" onClick={() => this.scrollTo("contact")}>Contact Me</a></li>
-         </ul>
+            <ul id="nav" className="nav">
+               <li className="navbar-logo" href=""><a href="#home" onClick={() => scroll.scrollToTop()}>
+                  <img 
+                  className="logo-img1" 
+                  src={logo} 
+                  alt="Home" 
+                  style={{
+                     height: "4.75rem", 
+                     width: "4.75rem",
+                     verticalAlign: "middle",
+                     }}
+                  ></img>
+                  </a>
+               </li>
+               <li><a href="#conceptArt" onClick={() => this.scrollTo("conceptArt")}>Concept Art</a></li>
+               <li><a href="#illustration" onClick={() => this.scrollTo("illustration")}>Illustration</a></li>
+               <li><a href="#study" onClick={() => this.scrollTo("study")}>Study</a></li>
+               <li><a href="#traditionalArt" onClick={() => this.scrollTo("traditionalArt")}>Traditional Art</a></li>
+               <li><a href="#contact" onClick={() => this.scrollTo("contact")}>Contact Me</a></li>
+            </ul>
 
-      </nav>
+         </nav>
 
       <div className="row banner">
          <div className="banner-text">
@@ -105,7 +108,7 @@ class Header extends Component {
          <a className="smoothscroll" href="#conceptArt" onClick={() => this.scrollTo("conceptArt")}><i className="icon-down-circle"></i></a>
       </p>
 
-   </header>
+   </section>
     );
   }
 }
