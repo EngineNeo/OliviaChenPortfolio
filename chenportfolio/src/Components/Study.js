@@ -2,34 +2,12 @@ import React, { Component } from 'react';
 import { ProGallery } from 'pro-gallery';
 import 'pro-gallery/dist/statics/main.css';
 
-// The options of the gallery (from the playground current state)
+// The options of the gallery
 const options = {
-  layoutParams: {
-      structure: {
-          galleryLayout: -1
-      },
-      targetItemSize: {
-        unit: "PIXEL",
-        value: 470
-    },
-      groups: {
-          groupSize: 2
-      }
-  },
-  behaviourParams: {
-      // gallery: {
-      //   layoutDirection: "RIGHT_TO_LEFT"
-      // },
-      item: {
-        overlay: {
-            hoverAnimation: "EXPAND"
-        },
-        // content: {
-        //   hoverAnimation: "ZOOM_IN"
-        // },
-        clickAction: "MAGNIFY"
-    }
-  }
+  galleryLayout: -1,
+  gallerySize: 50,
+  imageHoverAnimation: 'ZOOM_IN',
+  groupSize: 2,
 };
 
 // The size of the gallery container. The images will fit themselves in it
@@ -37,13 +15,6 @@ const container = {
 width: window.innerWidth,
 height: window.innerHeight
 };
-
-// The eventsListener will notify you anytime something has happened in the gallery.
-const eventsListener = (eventName, eventData) => console.log(); 
-
-// The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
-const scrollingElement = window;
-
 class Study extends Component {
   _isMounted = false;
 
@@ -73,6 +44,17 @@ class Study extends Component {
   }
 
   render() {
+
+    const customInfoRenderer = (itemProps) =>
+      (
+        <div class="hover-info-title">
+          <h5>{itemProps.title}</h5>
+        </div>
+      );
+
+    const eventsListener = (eventName, eventData) =>
+    console.log({ eventName, eventData });
+
    return(
    <section id="study">
     <h1 className="main-title">Study</h1>
@@ -82,7 +64,7 @@ class Study extends Component {
       options={options}
       container={container}
       eventsListener={eventsListener}
-      scrollingElement={scrollingElement}
+      customHoverRenderer={customInfoRenderer}
     />
    </section>
    )

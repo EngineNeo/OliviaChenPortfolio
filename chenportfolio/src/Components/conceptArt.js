@@ -2,30 +2,11 @@ import React, { Component } from 'react';
 import { ProGallery } from 'pro-gallery';
 import { Link } from 'react-router-dom';
 
-// The options of the gallery (from the playground current state)
+// The options of the gallery
 const options = {
-  layoutParams: {
-      structure: {
-          galleryLayout: -1
-      },
-      targetItemSize: {
-        unit: "PIXEL",
-        value: 450
-    }
-  },
-  behaviourParams: {
-      // gallery: {
-      //   layoutDirection: "RIGHT_TO_LEFT"
-      // },
-      item: {
-        overlay: {
-            hoverAnimation: "EXPAND"
-        },
-        // content: {
-        //   hoverAnimation: "ZOOM_IN"
-        // },
-    }
-  }
+  galleryLayout: -1,
+  gallerySize: 50,
+  imageHoverAnimation: 'ZOOM_IN',
 };
 
 // The size of the gallery container. The images will fit themselves in it

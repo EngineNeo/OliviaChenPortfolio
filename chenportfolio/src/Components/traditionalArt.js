@@ -1,34 +1,11 @@
 import React, { Component } from 'react';
 import { ProGallery } from 'pro-gallery';
 
-// The options of the gallery (from the playground current state)
+// The options of the gallery
 const options = {
-  layoutParams: {
-      structure: {
-          galleryLayout: -1
-      },
-      groups: {
-        groupSize: 1
-      },
-      targetItemSize: {
-        unit: "PIXEL",
-        value: 510
-    }
-  },
-  behaviourParams: {
-      // gallery: {
-      //   layoutDirection: "RIGHT_TO_LEFT"
-      // },
-      item: {
-        overlay: {
-            hoverAnimation: "EXPAND"
-        },
-        // content: {
-        //   hoverAnimation: "ZOOM_IN"
-        // },
-        clickAction: "MAGNIFY"
-    }
-  }
+    galleryLayout: 1,
+    gallerySize: 80,
+    imageHoverAnimation: 'ZOOM_IN'
 };
 
 // The size of the gallery container. The images will fit themselves in it
@@ -36,12 +13,6 @@ const container = {
 width: window.innerWidth,
 height: window.innerHeight
 };
-
-// The eventsListener will notify you anytime something has happened in the gallery.
-const eventsListener = (eventName, eventData) => console.log(); 
-
-// The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
-const scrollingElement = window;
 
 class TraditionalArt extends Component {
   _isMounted = false;
@@ -70,6 +41,16 @@ class TraditionalArt extends Component {
 
   render() {
 
+    const customInfoRenderer = (itemProps) =>
+      (
+        <div class="hover-info-title">
+          <h5>{itemProps.title}</h5>
+        </div>
+      );
+
+    const eventsListener = (eventName, eventData) =>
+    console.log({ eventName, eventData });
+
     return (
       <section id="traditionalArt">
         <h1 className="main-title">Traditional Art</h1>
@@ -79,7 +60,7 @@ class TraditionalArt extends Component {
           options={options}
           container={container}
           eventsListener={eventsListener}
-          scrollingElement={scrollingElement}
+          customHoverRenderer={customInfoRenderer}
         />
       </section>
     );
