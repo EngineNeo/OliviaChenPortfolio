@@ -73,7 +73,7 @@ class Illustration extends Component {
       <section id="illustration">
         <h1 className="main-title">Illustrations</h1>
         <ProGallery
-          id="illustration"
+          domId="illustration"
           items={this.state.illustrations}
           options={options}
           container={container}

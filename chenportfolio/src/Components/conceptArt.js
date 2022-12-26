@@ -13,40 +13,26 @@ const options = {
         value: 450
     }
   },
-  // behaviourParams: {
-  //     // gallery: {
-  //     //   layoutDirection: "RIGHT_TO_LEFT"
-  //     // },
-  //     item: {
-  //       overlay: {
-  //           hoverAnimation: "EXPAND"
-  //       },
-  //       // content: {
-  //       //   hoverAnimation: "ZOOM_IN"
-  //       // },
-  //   }
-  // }
+  behaviourParams: {
+      // gallery: {
+      //   layoutDirection: "RIGHT_TO_LEFT"
+      // },
+      item: {
+        overlay: {
+            hoverAnimation: "EXPAND"
+        },
+        // content: {
+        //   hoverAnimation: "ZOOM_IN"
+        // },
+    }
+  }
 };
-
-// Custom Hover Renderer
-// const customHoverRenderer = (itemProps) => (
-//   <div>
-//       <p>{itemProps.title}</p>
-//       <p>{itemProps.description}</p>
-//   </div>
-// );
 
 // The size of the gallery container. The images will fit themselves in it
 const container = {
   width: window.innerWidth,
   height: window.innerHeight
 };
-
-// The eventsListener will notify you anytime something has happened in the gallery.
-// const eventsListener = (eventName, eventData) => console.log(); 
-
-// The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
-// const scrollingElement = window;
 
 class ConceptArt extends Component {
   _isMounted = false;
@@ -77,34 +63,29 @@ class ConceptArt extends Component {
 
   render() {
 
-    const customInfoRenderer = (itemProps) => {
-      if (window.innerWidth < 750)
-        return (
-          <span style={{ width: "80%" }} className="img-text">
-            {itemProps.title}
-            {itemProps.description}
-          </span>
-        );
-      else
-        return (
-          <span style={{ width: "80%" }} className="img-text">
-            {itemProps.title}
-          </span>
-        );
-    };
+    const customInfoRenderer = (itemProps) =>
+      (
+        <div class="hover-info-title">
+          <h5>{itemProps.title}</h5>
+        </div>
+      );
 
+    const eventsListener = (eventName, eventData) =>
+    console.log({ eventName, eventData });
   
     return (
         <section id="conceptArt">
 
           <h1 className="main-title">Concept Art</h1>
           <ProGallery
-            id="conceptart"
+            domId="conceptart"
             items={this.state.conceptArt}
             options={options}
             container={container}
+            eventsListener={eventsListener}
             customHoverRenderer={customInfoRenderer}
           />
+          
           <Link to="/moreCA">
               <button className="cool-button">See More</button>
           </Link>
@@ -113,7 +94,8 @@ class ConceptArt extends Component {
 
             rowHeight={100}
             enableLightbox={false}
-            enableImageSelection={false}>
+            enableImageSelection={false}
+            >
               {Object.values(this.state.studies).map((post, divKey) => {
                       return (
                         <div key={divKey}>

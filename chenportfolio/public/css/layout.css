@@ -63,6 +63,12 @@ img:hover {
    cursor: pointer;
 }
 
+.gallery-item-hover-inner {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
 ::-webkit-scrollbar-track
 {
    background:rgb(26, 26, 26, 0.2);
@@ -344,7 +350,7 @@ ul#nav li.current a { color: #ffb30d; }
 #moreCA .description{
    margin: 25px 0px 25px;
    padding: 50px 50px;
-   background-color: rgb(54, 54, 54);
+   background-color: rgb(32, 32, 32);
 }
 
 #moreCA .description > p{

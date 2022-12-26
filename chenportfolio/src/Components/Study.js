@@ -77,7 +77,7 @@ class Study extends Component {
    <section id="study">
     <h1 className="main-title">Study</h1>
     <ProGallery
-      id="study"
+      domId="study"
       items={this.state.studies}
       options={options}
       container={container}

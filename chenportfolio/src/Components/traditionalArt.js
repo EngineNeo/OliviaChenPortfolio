@@ -74,7 +74,7 @@ class TraditionalArt extends Component {
       <section id="traditionalArt">
         <h1 className="main-title">Traditional Art</h1>
         <ProGallery
-          id="traditionalart"
+          domId="traditionalart"
           items={this.state.traditionalwork}
           options={options}
           container={container}
