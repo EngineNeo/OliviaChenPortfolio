@@ -32,7 +32,7 @@ class Study extends Component {
       .then(data =>
         this.setState(
           {
-            studies: data.images.study.map(item => ({
+            study: data.images.study.map(item => ({
               ...item,
               source: item.thumbnail
             })),
@@ -54,7 +54,7 @@ class Study extends Component {
       );
 
     const psoptions = {
-      dataSource: this.state.studies.map(({ mediaUrl, metaData }) => {
+      dataSource: this.state.study.map(({ mediaUrl, metaData }) => {
         const { height, width, title, description } = metaData;
         return {
           src: mediaUrl,
