@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ProGallery } from 'pro-gallery';
 import 'pro-gallery/dist/statics/main.css';
+import PhotoSwipeLightbox from './photoswipe-lightbox.esm.js';
 
 // The options of the gallery
 const options = {
@@ -52,8 +53,35 @@ class Study extends Component {
         </div>
       );
 
-    const eventsListener = (eventName, eventData) =>
-    console.log({ eventName, eventData });
+    const psoptions = {
+      dataSource: this.state.studies.map(({ mediaUrl, metaData }) => {
+        const { height, width, title, description } = metaData;
+        return {
+          src: mediaUrl,
+          width: width,
+          height: height,
+          alt: title,
+          description: description
+        };
+      }),
+      showHideAnimationType: 'none',
+      pswpModule: () => import('./photoswipe.esm.js'),
+    };
+
+    const lightbox = new PhotoSwipeLightbox(psoptions);
+
+    // const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+    //   // Plugins options, for example:
+    //   type: 'auto',
+    // });
+
+    const eventsListener = (eventName, eventData) =>{
+      if (eventName === 'ITEM_CLICKED') {
+        lightbox.loadAndOpen(eventData.idx)
+      } else {
+        console.log('The event name is not ITEM_CLICKED');
+      }
+    }
 
    return(
    <section id="study">
