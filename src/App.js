@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ConceptArt from './Components/conceptArt';
@@ -29,7 +28,7 @@ class App extends Component {
           <ScrollToTop />
             <Switch>
             <AnimatePresence exitBeforeEnter>
-              <Route exact path="/">
+              <Route exact path="/" basename={process.env.PUBLIC_URL}>
                 <Header/>
                 <ConceptArt/>
                 <Illustration/>
@@ -39,7 +38,7 @@ class App extends Component {
                 <Contact/>
                 <Footer/>
               </Route>
-              <Route path="/moreCA">
+              <Route path="/moreCA" basename={process.env.PUBLIC_URL}>
                 <MoreCA/>
                 <Footer/>
               </Route>

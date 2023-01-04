@@ -115,7 +115,7 @@ class ConceptArt extends Component {
             // customImageRenderer={customImageRenderer}
           />
 
-          <Link to="/moreCA">
+          <Link to="/moreCA" basename={process.env.PUBLIC_URL}>
               <button className="cool-button">See More</button>
           </Link>
 
