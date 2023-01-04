@@ -6,31 +6,6 @@
 
  jQuery(document).ready(function($) {
 
-
-/*----------------------------------------------------*/
-/* Nanogallery2
------------------------------------------------------- */
-
-   // jQuery("#nanogallery2_flickr").nanogallery2(settings);
-  
-   // jQuery('#btn_photostream').on('click', function() {
-   //   jQuery("#nanogallery2_flickr").nanogallery2('destroy');
-   //   settings.album = 'none';
-   //   jQuery("#nanogallery2_flickr").nanogallery2(settings);
-   // });
-   
-   // jQuery('#btn_albums').on('click', function() {
-   //   jQuery("#nanogallery2_flickr").nanogallery2('destroy');
-   //   settings.album = undefined;
-   //   jQuery("#nanogallery2_flickr").nanogallery2(settings);
-   // });
-   
-   // jQuery('#btn_album').on('click', function() {
-   //   jQuery("#nanogallery2_flickr").nanogallery2('destroy');
-   //   settings.album = '72157675219521270';     // Flickr album ID
-   //   jQuery("#nanogallery2_flickr").nanogallery2(settings);
-   // });
-
 /*----------------------------------------------------*/
 /* FitText Settings
 ------------------------------------------------------ */
