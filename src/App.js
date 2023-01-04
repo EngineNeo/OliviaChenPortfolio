@@ -29,7 +29,7 @@ class App extends Component {
           <ScrollToTop />
             <Switch>
             <AnimatePresence exitBeforeEnter>
-              <Route exact path="/oliviachenportfolio/">
+              <Route exact path="/">
                 <Header/>
                 <ConceptArt/>
                 <Illustration/>
