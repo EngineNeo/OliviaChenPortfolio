@@ -8,9 +8,9 @@ import Modeling from './Components/Modeling';
 import Contact from './Components/Contact';
 import Study from './Components/Study';
 import TraditionalArt from './Components/traditionalArt';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion/dist/framer-motion';
-import ScrollToTop from './Components/ScrollToTop';
+// import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+// import { AnimatePresence } from 'framer-motion/dist/framer-motion';
+// import ScrollToTop from './Components/ScrollToTop';
 
 class App extends Component {
   constructor(props) {
@@ -23,11 +23,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router basename="/oliviachenportfolio">
+        {/* <Router basename="/oliviachenportfolio">
           <ScrollToTop />
           <Switch>
             <AnimatePresence exitBeforeEnter>
-              <Route exact path="/" basename={process.env.PUBLIC_URL}>
+              <Route exact path="/" basename={process.env.PUBLIC_URL}> */}
                 <Header />
                 <ConceptArt />
                 <Illustration />
@@ -36,25 +36,11 @@ class App extends Component {
                 <TraditionalArt />
                 <Contact />
                 <Footer />
-              </Route>
+              {/* </Route>
               <Route path="/moreCA" basename={process.env.PUBLIC_URL}>
                 <MoreCA />
                 <Footer />
-              </Route>
-              {/* Add a catch-all route to return the index.html file for all routes */}
-              <Route path="*">
-                <Header />
-                <ConceptArt />
-                <Illustration />
-                <Modeling />
-                <Study />
-                <TraditionalArt />
-                <Contact />
-                <Footer />
-              </Route>
-            </AnimatePresence>
-          </Switch>
-        </Router>
+              </Route> */}
       </div>
     );
   }
