@@ -495,7 +495,7 @@
     "thestudies": [
       {
       "itemId": "stillife",
-      "mediaUrl": "images/thestudies/Still_Life.jpg",
+      "mediaUrl": "images/thestudies/still_life.jpg",
       "metaData": {
         "type": "image",
         "height": 2967,
@@ -550,7 +550,7 @@
       },
       {
       "itemId": "15feet",
-      "mediaUrl": "images/thestudies/15feet.jpg",
+      "mediaUrl": "images/thestudies/15Feet.jpg",
       "metaData": {
         "type": "image",
         "height": 825,
