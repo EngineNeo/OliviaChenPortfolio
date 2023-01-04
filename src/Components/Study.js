@@ -32,7 +32,7 @@ class Study extends Component {
       .then(data =>
         this.setState(
           {
-            studies: data.images.studies.map(item => ({
+            studies: data.images.study.map(item => ({
               ...item,
               source: item.thumbnail
             })),

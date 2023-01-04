@@ -492,10 +492,10 @@
           }
       }
     ],
-    "studies": [
+    "study": [
       {
       "itemId": "stillife",
-      "mediaUrl": "images/Studies/Still_Life.jpg",
+      "mediaUrl": "images/study/Still_Life.jpg",
       "metaData": {
         "type": "image",
         "height": 2967,
@@ -506,7 +506,7 @@
       },
       {
       "itemId": "aman",
-      "mediaUrl": "images/Studies/A_Man.jpg",
+      "mediaUrl": "images/study/A_Man.jpg",
       "metaData": {
         "type": "image",
         "height": 1242,
@@ -517,7 +517,7 @@
       },
       {
       "itemId": "colorstudy2",
-      "mediaUrl": "images/Studies/ColorStudy2.jpg",
+      "mediaUrl": "images/study/ColorStudy2.jpg",
       "metaData": {
         "type": "image",
         "height": 1116,
@@ -528,7 +528,7 @@
       },
       {
       "itemId": "colorstudy1",
-      "mediaUrl": "images/Studies/ColorStudy1.jpg",
+      "mediaUrl": "images/study/ColorStudy1.jpg",
       "metaData": {
         "type": "image",
         "height": 1530,
@@ -539,7 +539,7 @@
       },
       {
       "itemId": "brucelee",
-      "mediaUrl": "images/Studies/BruceLee.jpg",
+      "mediaUrl": "images/study/BruceLee.jpg",
       "metaData": {
         "type": "image",
         "height": 1740,
@@ -550,7 +550,7 @@
       },
       {
       "itemId": "15feet",
-      "mediaUrl": "images/Studies/15feet.jpg",
+      "mediaUrl": "images/study/15feet.jpg",
       "metaData": {
         "type": "image",
         "height": 825,
