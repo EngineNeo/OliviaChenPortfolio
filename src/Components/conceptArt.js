@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ProGallery } from 'pro-gallery';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PhotoSwipeLightbox from './photoswipe-lightbox.esm.js';
 import AnimatedPage from "./AnimatedPage";
 
@@ -95,10 +95,8 @@ class ConceptArt extends Component {
     const eventsListener = (eventName, eventData) =>{
       if (eventName === 'ITEM_CLICKED') {
         lightbox.loadAndOpen(eventData.idx)
-      } else {
-        console.log('The event name is not ITEM_CLICKED');
-      }
     }
+  }
 
     return (
       <AnimatedPage>
@@ -115,9 +113,9 @@ class ConceptArt extends Component {
             // customImageRenderer={customImageRenderer}
           />
 
-          {/* <Link to="/moreCA" basename={process.env.PUBLIC_URL}>
+          <Link to="/moreCA" basename={process.env.PUBLIC_URL}>
               <button className="cool-button">See More</button>
-          </Link> */}
+          </Link>
 
         </section>
         </AnimatedPage>

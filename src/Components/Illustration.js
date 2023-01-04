@@ -77,8 +77,6 @@ class Illustration extends Component {
     const eventsListener = (eventName, eventData) =>{
       if (eventName === 'ITEM_CLICKED') {
         lightbox.loadAndOpen(eventData.idx)
-      } else {
-        console.log('The event name is not ITEM_CLICKED');
       }
     }
 
