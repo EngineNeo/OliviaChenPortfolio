@@ -517,7 +517,7 @@
       },
       {
       "itemId": "colorstudy2",
-      "mediaUrl": "images/study/ColorStudy2.jpg",
+      "mediaUrl": "images/study/color_study2.jpg",
       "metaData": {
         "type": "image",
         "height": 1116,
@@ -528,7 +528,7 @@
       },
       {
       "itemId": "colorstudy1",
-      "mediaUrl": "images/study/ColorStudy1.jpg",
+      "mediaUrl": "images/study/color_study.jpg",
       "metaData": {
         "type": "image",
         "height": 1530,
