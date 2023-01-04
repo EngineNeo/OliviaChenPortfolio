@@ -492,10 +492,10 @@
           }
       }
     ],
-    "study": [
+    "thestudies": [
       {
       "itemId": "stillife",
-      "mediaUrl": "images/study/Still_Life.jpg",
+      "mediaUrl": "images/thestudies/Still_Life.jpg",
       "metaData": {
         "type": "image",
         "height": 2967,
@@ -506,7 +506,7 @@
       },
       {
       "itemId": "aman",
-      "mediaUrl": "images/study/A_Man.jpg",
+      "mediaUrl": "images/thestudies/A_Man.jpg",
       "metaData": {
         "type": "image",
         "height": 1242,
@@ -517,29 +517,29 @@
       },
       {
       "itemId": "colorstudy2",
-      "mediaUrl": "images/study/color_study2.jpg",
+      "mediaUrl": "images/thestudies/color_study2.jpg",
       "metaData": {
         "type": "image",
-        "height": 1116,
-        "width": 1579,
+        "height": 2480,
+        "width": 3508,
         "title": "Color Study 2",
         "description": "A study of color (2)"
         }
       },
       {
       "itemId": "colorstudy1",
-      "mediaUrl": "images/study/color_study.jpg",
+      "mediaUrl": "images/thestudies/color_study.jpg",
       "metaData": {
         "type": "image",
-        "height": 1530,
-        "width": 1063,
+        "height": 2781,
+        "width": 1932,
         "title": "Color Study 1",
         "description": "A study of color (1)"
         }
       },
       {
       "itemId": "brucelee",
-      "mediaUrl": "images/study/BruceLee.jpg",
+      "mediaUrl": "images/thestudies/BruceLee.jpg",
       "metaData": {
         "type": "image",
         "height": 1740,
@@ -550,7 +550,7 @@
       },
       {
       "itemId": "15feet",
-      "mediaUrl": "images/study/15feet.jpg",
+      "mediaUrl": "images/thestudies/15feet.jpg",
       "metaData": {
         "type": "image",
         "height": 825,
