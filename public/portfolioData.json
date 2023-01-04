@@ -1,0 +1,600 @@
+{
+  "main": {
+    "name": "Olivia Chen",
+    "description": "A creative, multilingual concept artist eager to compose and collaborate",
+    "website": "http://www.olivachenart.me",
+    "social": [
+      {
+        "name": "artstation",
+        "url": "https://bokkie.artstation.com/",
+        "className": "fa fa-twitter"
+      }
+    ]
+  },
+  "images": {
+    "conceptart": {
+      "main_ca": [
+        {
+          "itemId": "jigong",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/jigongThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1440,
+            "width": 2160,
+            "title": "Gems of China - Scavenger Ji-Gong",
+            "description": "An old, homeless monk named Ji Gong built this mech with the trash he found at the wasteland, it has a bamboo tent on top carrying Ji-Gong, this mech became his mobile home."
+            }
+        },
+        {
+          "itemId": "lapumalakas",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/LapuThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1188,
+            "width": 2093,
+            "title": "Project Space Opera - Lapu Malakas",
+            "description": "Lapu Malakas - Ruby of the Galaxy Space Casino Co-Owner"
+            }
+        },
+        {
+          "itemId": "mudanpeony",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/MudanThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1188,
+            "width": 2093,
+            "title": "Project Space Opera - Mudan Peony",
+            "description": "Mudan Peony - Ruby of the Galaxy Space Casino Co-Owner"
+            }
+        },
+        {
+          "itemId": "ikeya",
+          "mediaUrl": "images/ConceptArt/character/ProjectSeasideCafe/Ikeya.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1425,
+            "width": 1765,
+            "title": "Project Seaside Cafe - Ikeya",
+            "description": "She works part-time so she gets pineapple buns for free, and she gets to save up for concerts."
+            }
+        },
+        {
+          "itemId": "yuan",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/YuanThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1584,
+            "width": 2376,
+            "title": "Gems of China - Yuan",
+            "description": "Yuan is a robot from the older world, he helps humans with storing all the memories and history, he recorded the older world, he is recording the current world, and he will continue doing his job for humans. By connecting to Yuan, you will find out the truth."
+            }
+        },
+        {
+          "itemId": "soullantern",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/lanternThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - Soul-Keeping Lantern",
+            "description": "Being held by the Bai WuChang, who often only needs to deal with tamed, easy-going souls. The Claw of eyes is holding the lantern, the eyes are seeking for missing souls. Soul Keeping Lantern collects souls through the nine “teeth holes” on top, they are crafted from beasts teeth with copper wires tied around them.The top of the lantern is shaped like an upside-down lotus flower, soul-summoning spells are hanging around it. The body of the lantern is made of jade, with two flowers crafted on each side."
+            }
+        },
+        {
+          "itemId": "theblacktortoise",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/tortoiseThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - The Black Tortoise",
+            "description": "Named alter the Chinese God who carries heaven on his back. The Black Tortoise is a giant transport spaceship."
+            }
+        },
+        {
+          "itemId": "thegoat",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/guangzhouThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1920,
+            "width": 2967,
+            "title": "Gems of China (Mech) - The G.O.A.T.",
+            "description": "I was born in Guangzhou, this is also the city my dad's family is from, Guangzhou is also called the “five goats city” or “goat town"
+            }
+        }
+      ],
+      "gemsofchina": [
+        {
+          "itemId": "madameumbrella",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/umbrellaThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - Spider Madame's Red Umbrella",
+            "description": "Spider Madam hides under her umbrella in the dark, waiting for her preys. The ribs are filled with venom, the stretchers are made of spider webs, they spread out to capture preys. The structure of the umbrella is based on Chinese Oil-paper umbrella style."
+            }
+        },
+        {
+          "itemId": "snakefan",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/fanThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - White Snake Blade Fan",
+            "description": "The handle is based on the function of brass knuckles, each fan blade has a pair of white snakes, when summoned by the holder, they become alive. The ivory blades are made of bones, sharp and deadly."
+            }
+        },
+        {
+          "itemId": "stonesword",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/swordThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - Stone Lion's Sword",
+            "description": "Stone lions are the gate guards in Chinese culture, they are brave and honest, bring safety and good fortunes. When they come alive, they shall hold a giant stone sword to defeat the unholy."
+            }
+        },
+        {
+          "itemId": "soulbreaker",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/soulbreakerThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - Soul-Breaker",
+            "description": "Being held by the Hei Wuchang, who often needs to deal with evil spirits, soul-breaker is the weapon he uses. Two sets of hands holding on to two rings of hell fire, they lock on to spirits like a pair of cuffs."
+            }
+        },
+        {
+          "itemId": "soullantern",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/lanternThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - Soul-Purifying Wine",
+            "description": "The body of the soul-purifying wine is made of a dried calabash, the cork is made of mahogany wood. In Chinese culture, mahogany wood is good for purifying souls and the area around it. Two ivory eyeballs are hanging from the bottle, they are making sure everything is being done in order. Heibai wuchang would use this wine to purify souls who are not clean or an area that is unsettled. If an evil soul tries to escape or attack, the eyeballs will catch it."
+            }
+        },
+        {
+          "itemId": "soulwine",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/wineThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - Soul-Keeping Lantern",
+            "description": "Being held by the Bai WuChang, who often only needs to deal with tamed, easy-going souls. The Claw of eyes is holding the lantern, the eyes are seeking for missing souls. Soul Keeping Lantern collects souls through the nine “teeth holes” on top, they are crafted from beasts teeth with copper wires tied around them.The top of the lantern is shaped like an upside-down lotus flower, soul-summoning spells are hanging around it. The body of the lantern is made of jade, with two flowers crafted on each side."
+            }
+        },
+        {
+          "itemId": "piggysoden",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/odenThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - Piggy's Oishii Oden",
+            "description": "Tastes like . . . the sweet childhood memories."
+            }
+        },
+        {
+          "itemId": "theblacktortoise",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/tortoiseThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - The Black Tortoise",
+            "description": "Named alter the Chinese God who carries heaven on his back. The Black Tortoise is a giant transport spaceship."
+            }
+        },
+        {
+          "itemId": "oculus",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/oculusThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1080,
+            "width": 1920,
+            "title": "Gems of China - Oculus",
+            "description": "Patrol spaceship that sees everything.."
+            }
+        },
+        {
+          "itemId": "dapeng",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/shenzhenThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1440,
+            "width": 2160,
+            "title": "Gems of China - City Defender Shen Zhen, Da Peng",
+            "description": "Shenzhen is my hometown, it is named after the giant mythical bird named Da-Peng. Shenzhen is known for being the silicon valley of China, also Hong Hong's twin city."
+            }
+        },
+        {
+          "itemId": "thegoat",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/guangzhouThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1920,
+            "width": 2967,
+            "title": "Gems of China (Mech) - The G.O.A.T.",
+            "description": "I was born in Guangzhou, this is also the city my dad's family is from, Guangzhou is also called the “five goats city” or “goat town"
+            }
+        },
+        {
+          "itemId": "jigong",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/jigongThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1440,
+            "width": 2160,
+            "title": "Gems of China - Scavenger Ji-Gong",
+            "description": "An old, homeless monk named Ji Gong built this mech with the trash he found at the wasteland, it has a bamboo tent on top carrying Ji-Gong, this mech became his mobile home."
+            }
+        },
+        {
+          "itemId": "wawamech",
+          "mediaUrl": "images/ConceptArt/Prop/PropThumbnails/wawaThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1390,
+            "width": 2160,
+            "title": "Gems of China - The Farm Assist Mech",
+            "description": "Wawa works at the tea farm as an assist mech, helps the farmers with tea leaves collecting and watering."
+            }
+        },
+        {
+          "itemId": "ahjing",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/AhJingThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1584,
+            "width": 2376,
+            "title": "Gems of China - Ah-Jing",
+            "description": "Ah-Jing used to be an underground fighter as well, but she is too intelligent to just be a fighting robot, the boss let her host all the fights, she is charming and attractive, fighters and the audience loves her, workers follow her around ready to do what she orders."
+            }
+        },
+        {
+          "itemId": "chowchow",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/ChowChowThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1584,
+            "width": 2376,
+            "title": "Gems of China - ChowChow",
+            "description": "ChowChow was a normal garbage disposal bot from the seafood market. He got kidnapped by a group of college kids one night and came back completely different. He now smokes wires for fun and walks around, still does not speak but the market owner decided to move him up to official employee of the market."
+            }
+        },
+        {
+          "itemId": "yuan",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/YuanThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1584,
+            "width": 2376,
+            "title": "Gems of China - Yuan",
+            "description": "Yuan is a robot from the older world, he helps humans with storing all the memories and history, he recorded the older world, he is recording the current world, and he will continue doing his job for humans. By connecting to Yuan, you will find out the truth."
+            }
+        }
+      ],
+      "spaceopera": [
+        {
+          "itemId": "mudanpeony",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/MudanThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1188,
+            "width": 2093,
+            "title": "Project Space Opera - Mudan Peony",
+            "description": "Mudan Peony - Ruby of the Galaxy Space Casino Co-Owner"
+            }
+        },
+        {
+          "itemId": "spacekun",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/KunMinThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1188,
+            "width": 2112,
+            "title": "Project Space Opera - Kun ",
+            "description": "Kun came from the back of the sun he is one of the sun people. An ancient race who has existed for a very long time. Kun was sent to earth to delight the human race, now he is one of the patrons who help humans develop in the space. The design of kun is inspired by the bronze figures discovered in Sanxingdui, Sichuan, China."
+            }
+        },
+        {
+          "itemId": "spacedida",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/DidaThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1188,
+            "width": 2112,
+            "title": "Project Space Opera - Kun ",
+            "description": "Dida, the most famous soprano singer in the milkey way. She came from a planet named nvland, a feminist utopia. The nvland women are known to be beautiful and intelligent, they are majestic and respected among all species."
+            }
+        },
+        {
+          "itemId": "lapumalakas",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/LapuThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1188,
+            "width": 2093,
+            "title": "Project Space Opera - Lapu Malakas",
+            "description": "Lapu Malakas - Ruby of the Galaxy Space Casino Co-Owner"
+            }
+        }
+      ],
+      "firstgdc": [
+        {
+          "itemId": "plaguevulture",
+          "mediaUrl": "images/ConceptArt/Prop/2023GDC/Brawler_Road and Traffic Lines Asset.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1500,
+            "width": 2100,
+            "title": "Plague (GDC 2023) - Grave Digger Vulture",
+            "description": "Grave Digger Vulture Line and Colors."
+            }
+        },
+        {
+          "itemId": "brawleritems",
+          "mediaUrl": "images/ConceptArt/Prop/2023GDC/Brawler_Sidewalk Items Asset.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1500,
+            "width": 2100,
+            "title": "Brawler (GDC 2023) - Brawler Sidewalk Items Asset",
+            "description": "Item assets for Brawler "
+            }
+        },
+        {
+          "itemId": "brawlerroad",
+          "mediaUrl": "images/ConceptArt/Prop/2023GDC/Brawler_Sidewalk Blocks Asset.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1500,
+            "width": 2100,
+            "title": "Brawler (GDC 2023) - Brawler Sidewalk Blocks Asset",
+            "description": "Sidewalk blocks assets for Brawler."
+            }
+        },
+        {
+          "itemId": "brawlersidewalk",
+          "mediaUrl": "images/ConceptArt/Prop/2023GDC/Char_GraveDiggerVulture_LineNColor_G.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1800,
+            "width": 2700,
+            "title": "Brawler (GDC 2023) - Brawler Road and Traffic Lines Asset",
+            "description": "Road and traffic lines assets for Brawler."
+            }
+        }
+      ],
+      "seasidecafe": [
+        {
+          "itemId": "ikeya",
+          "mediaUrl": "images/ConceptArt/character/ProjectSeasideCafe/Ikeya.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1425,
+            "width": 1765,
+            "title": "Project Seaside Cafe - Ikeya",
+            "description": "She works part-time so she gets pineapple buns for free, and she gets to save up for concerts."
+            }
+        },
+        {
+          "itemId": "mina",
+          "mediaUrl": "images/ConceptArt/character/ProjectSeasideCafe/Mina.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1419,
+            "width": 1765,
+            "title": "Project Seaside Cafe - Mina",
+            "description": "Seaside Restaurant Owner, alcoholic in denial."
+            }
+        }
+      ],
+      "shipraccoon": [
+        {
+          "itemId": "alexconcept",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/AlexConceptThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1485,
+            "width": 2957,
+            "title": "Project Ship Raccoon - Alex Concept",
+            "description": "Crab-like personality. Captain of the spaceship “raccoon” strong, responsible, reliable, well-dressed. Thinks he is funny (sometimes he might be)stubborn, can be shy, hide away when hurt. He likes to repair his spaceship and calls it his old baby, his crew loves him"
+            }
+        },
+        {
+          "itemId": "niniconcept",
+          "mediaUrl": "images/ConceptArt/character/CharacterThumbnails/NiniConceptThumbnail.jpg",
+          "metaData": {
+            "type": "image",
+            "height": 1485,
+            "width": 2957,
+            "title": "Project Ship Raccoon - Nini Concept",
+            "description": "Bee-like personality. The information center of the spaceship “raccoon” quick thinker. Confident in her knowledge, knows everything. Very important crew member to alex. Kind and offering, but sometimes inpatient. Organize everyones schedule on the spaceship raccoon"
+            }
+        }
+      ]
+    }, 
+    "illustrations": [
+      {
+        "itemId": "anopening",
+        "mediaUrl": "images/IllustrationsAndTraditional/IllustrationThumbnail/anopeningThumbnail.jpg",
+        "metaData": {
+          "type": "image",
+          "height": 837,
+          "width": 1728,
+          "title": "Environment - An Opening",
+          "description": "A monk finding an opening to the shrine"
+          }
+      },
+      {
+        "itemId": "wizardinthewoods",
+        "mediaUrl": "images/IllustrationsAndTraditional/IllustrationThumbnail/WizardInTheWoods.jpg",
+        "metaData": {
+          "type": "image",
+          "height": 2550,
+          "width": 1650,
+          "title": "Environment - Wizard in The Woods",
+          "description": "A knight approaches a wizard in the woods"
+          }
+      },
+      {
+        "itemId": "ontheway",
+        "mediaUrl": "images/IllustrationsAndTraditional/IllustrationThumbnail/OnTheWayThumbnail.jpg",
+        "metaData": {
+          "type": "image",
+          "height": 1056,
+          "width": 1632,
+          "title": "Environment - On The Way",
+          "description": "A capybara with a baby chicken on his head being followed by three turtles while crossing over a river"
+          }
+      }
+    ],
+    "modeling": [
+      {
+        "itemId": "gam201final",
+        "mediaUrl": "images/3DModeling/GAM201_Diorama Final Result_OChen.jpg",
+        "metaData": {
+          "type": "image",
+          "height": 1320,
+          "width": 2040,
+          "title": "GAM201 - Diorama Final Result",
+          "description": "The Final Result of the GAM201 Diorama"
+          }
+      },
+      {
+        "itemId": "gam201concept",
+        "mediaUrl": "images/3DModeling/GAM201_Diorama Concept_OChen.jpg",
+        "metaData": {
+          "type": "image",
+          "height": 1320,
+          "width": 2040,
+          "title": "GAM201 - Diorama Concept",
+          "description": "Concept of GAM201 Diorama"
+          }
+      },
+      {
+        "itemId": "gam201layout",
+        "mediaUrl": "images/3DModeling/GAM201_Diorama Layout Options_OChen.jpg",
+        "metaData": {
+          "type": "image",
+          "height": 1320,
+          "width": 2040,
+          "title": "GAM201 - Diorama Layout",
+          "description": "A layout of GAM201 Diorama"
+          }
+      }
+    ],
+    "studies": [
+      {
+      "itemId": "stillife",
+      "mediaUrl": "/images/studies/studyThumbnails/Still_Life.jpg",
+      "metaData": {
+        "type": "image",
+        "height": 2967,
+        "width": 1920,
+        "title": "Still Life",
+        "description": "A study of still life"
+        }
+      },
+      {
+      "itemId": "aman",
+      "mediaUrl": "/images/studies/studyThumbnails/A_Man.jpg",
+      "metaData": {
+        "type": "image",
+        "height": 1242,
+        "width": 1920,
+        "title": "A Man",
+        "description": "A study of a man"
+        }
+      },
+      {
+      "itemId": "colorstudy2",
+      "mediaUrl": "/images/studies/studyThumbnails/ColorStudy2.jpg",
+      "metaData": {
+        "type": "image",
+        "height": 1116,
+        "width": 1579,
+        "title": "Color Study 2",
+        "description": "A study of color (2)"
+        }
+      },
+      {
+      "itemId": "colorstudy1",
+      "mediaUrl": "/images/studies/studyThumbnails/ColorStudy1.jpg",
+      "metaData": {
+        "type": "image",
+        "height": 1530,
+        "width": 1063,
+        "title": "Color Study 1",
+        "description": "A study of color (1)"
+        }
+      },
+      {
+      "itemId": "brucelee",
+      "mediaUrl": "/images/studies/studyThumbnails/BruceLee.jpg",
+      "metaData": {
+        "type": "image",
+        "height": 1740,
+        "width": 1740,
+        "title": "Bruce Lee",
+        "description": "A study of Bruce Lee"
+        }
+      },
+      {
+      "itemId": "15feet",
+      "mediaUrl": "/images/studies/studyThumbnails/15feet.jpg",
+      "metaData": {
+        "type": "image",
+        "height": 825,
+        "width": 1275,
+        "title": "15 Feet",
+        "description": "A study of 15 feet"
+        }
+      }
+    ],
+    "traditionalwork": [
+      {
+        "itemId": "motorcyclegirl",
+        "mediaUrl": "images/IllustrationsAndTraditional/TraditionalWork/motorcycle.jpg",
+        "metaData": {
+          "itemId": "Motorcyclegirl",
+          "type": "image",
+          "height": 1819,
+          "width": 1819,
+          "title": "Traditional Work (Sketch) - Motorcycle Girl",
+          "description": "A girl with a motorcycle helmet on"
+          }
+      },
+      {
+        "itemId": "audrey",
+        "mediaUrl": "images/IllustrationsAndTraditional/TraditionalWork/Audrey.jpg",
+        "metaData": {
+          "type": "image",
+          "height": 3895,
+          "width": 2970,
+          "title": "Traditional Work - Audrey",
+          "description": "A girl with a motorcycle helmet on"
+          }
+      },
+      {
+        "itemId": "mouse",
+        "mediaUrl": "images/IllustrationsAndTraditional/TraditionalWork/mouse.jpg",
+        "metaData": {
+          "type": "image",
+          "height": 2694,
+          "width": 1924,
+          "title": "Traditional Work (Sketch) - Mouse",
+          "description": "A mouse with a jacket on smoking a cigarette"
+          }
+      }
+    ]
+  }
+}
