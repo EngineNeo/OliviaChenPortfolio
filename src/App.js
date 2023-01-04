@@ -8,43 +8,53 @@ import Modeling from './Components/Modeling';
 import Contact from './Components/Contact';
 import Study from './Components/Study';
 import TraditionalArt from './Components/traditionalArt';
-import { Route, BrowserRouter as Router, Switch} from 'react-router-dom';
-import {AnimatePresence} from "framer-motion/dist/framer-motion";
-import ScrollToTop from "./Components/ScrollToTop";
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion/dist/framer-motion';
+import ScrollToTop from './Components/ScrollToTop';
 
 class App extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      portfolioData: {}
+      portfolioData: {},
     };
   }
 
   render() {
     return (
-      <div className="App">      
-          <Router>
+      <div className="App">
+        <Router basename="/oliviachenportfolio">
           <ScrollToTop />
-            <Switch>
+          <Switch>
             <AnimatePresence exitBeforeEnter>
               <Route exact path="/" basename={process.env.PUBLIC_URL}>
-                <Header/>
-                <ConceptArt/>
-                <Illustration/>
-                <Modeling/>
-                <Study/>
-                <TraditionalArt/>
-                <Contact/>
-                <Footer/>
+                <Header />
+                <ConceptArt />
+                <Illustration />
+                <Modeling />
+                <Study />
+                <TraditionalArt />
+                <Contact />
+                <Footer />
               </Route>
               <Route path="/moreCA" basename={process.env.PUBLIC_URL}>
-                <MoreCA/>
-                <Footer/>
+                <MoreCA />
+                <Footer />
               </Route>
-              </AnimatePresence>
-            </Switch>
-          </Router>
+              {/* Add a catch-all route to return the index.html file for all routes */}
+              <Route path="*">
+                <Header />
+                <ConceptArt />
+                <Illustration />
+                <Modeling />
+                <Study />
+                <TraditionalArt />
+                <Contact />
+                <Footer />
+              </Route>
+            </AnimatePresence>
+          </Switch>
+        </Router>
       </div>
     );
   }
